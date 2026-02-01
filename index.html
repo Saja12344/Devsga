@@ -331,6 +331,31 @@
       font-size: 12px;
       font-weight: 500;
     }
+/* Resume toggle */
+.resume-more {
+  display: none;
+  margin-top: 12px;
+}
+
+.highlight-card.expanded .resume-more {
+  display: block;
+}
+
+.resume-toggle-btn {
+  margin-top: 12px;
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-family: 'VT323', monospace;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+  letter-spacing: 1px;
+}
+
+.resume-toggle-btn:hover {
+  text-decoration: underline;
+}
 
     /* Skills Section */
     .skills-section {
@@ -523,6 +548,9 @@
 
     .social-info {
       flex: 1;
+        display: flex;
+  flex-direction: column;
+  gap: 2px;
     }
 
     .social-platform {
@@ -687,8 +715,6 @@
     padding-bottom: 48px;
      }
 
-
-
       .projects-grid {
         grid-template-columns: 1fr;
       }
@@ -701,13 +727,37 @@
        .connect-layout {
     grid-template-columns: 1fr;
   }
+    .connect-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .tiktok-section {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+  }
+
+  .social-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .social-card {
+    
+    width: 100%;
+    padding: 16px;
+  }
+}
 
   /* .social-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   } */
-    }
+    
     .connect-layout {
       display: grid;
   grid-template-columns: 1fr 1fr;
@@ -726,6 +776,7 @@
   text-decoration: none;
   color: inherit;
   transition: background 0.2s, transform 0.2s;
+
 }
 
     /* Soft Skills */
@@ -1564,30 +1615,35 @@ and create emotional resonance.
       <div class="resume-highlights">
 
         <!-- Apple Developer Academy -->
-        <div class="highlight-card">
-          <h4 class="highlight-title">iOS Developer (Part-time)</h4>
-          <p class="highlight-period">Aug 2024 – Present // Apple Developer Academy, Riyadh</p>
-          <p class="highlight-description">
-            Working in multidisciplinary teams to design and prototype innovative iOS applications using Swift and Xcode.
-          </p>
-              <button class="read-more-btn">Read more</button>
-<br>
-          <ul class="highlight-list">
-            <li>Developed iOS apps using Swift & SwiftUI</li>
-            <li>Participated in Agile sprints and daily standups</li>
-            <li>Contributed to code reviews and UI/UX decisions</li>
-            <li>Built interactive prototypes and MVPs</li>
-          </ul>
-        </div>
+    <div class="highlight-card">
+  <h4 class="highlight-title">iOS Developer (Part-time)</h4>
+  <p class="highlight-period">Aug 2024 – Present // Apple Developer Academy, Riyadh</p>
+
+  <div class="resume-more">
+    <p class="highlight-description">
+      Working in multidisciplinary teams to design and prototype innovative iOS applications using Swift and Xcode.
+    </p>
+
+    <ul class="highlight-list">
+      <li>Developed iOS apps using Swift & SwiftUI</li>
+      <li>Participated in Agile sprints and daily standups</li>
+      <li>Contributed to code reviews and UI/UX decisions</li>
+      <li>Built interactive prototypes and MVPs</li>
+    </ul>
+  </div>
+
+  <button class="resume-toggle-btn">Show more</button>
+</div>
 
         <!-- Macromin -->
         <div class="highlight-card secondary">
           <h4 class="highlight-title">iOS Developer Intern</h4>
           <p class="highlight-period">May 2025 – Apr 2025 // Macromin Solution (Remote)</p>
+          <div class="resume-more">
+        
           <p class="highlight-description">
             Developed and tested app features in an Agile environment, collaborating remotely with cross-functional teams.
           </p>
-              <button class="read-more-btn">Read more</button>
 <br>
           <ul class="highlight-list">
             <li>Implemented SwiftUI views and logic</li>
@@ -1595,16 +1651,19 @@ and create emotional resonance.
             <li>Participated in UI/UX discussions using Figma</li>
             <li>Followed Apple Human Interface Guidelines</li>
           </ul>
+            </div>
+  <button class="resume-toggle-btn">Show more</button>
+
         </div>
 
         <!-- Apple Foundation Program -->
         <div class="highlight-card">
           <h4 class="highlight-title">iOS Developer Intern</h4>
           <p class="highlight-period">Nov 2024 – Dec 2024 // Apple Foundation Program, Riyadh</p>
+          <div class="resume-more">
           <p class="highlight-description">
             Built an iOS prototype with scalable architecture and responsive UI layouts.
           </p>
-              <button class="read-more-btn">Read more</button>
 <br>
           <ul class="highlight-list">
             <li>Developed core features using SwiftUI</li>
@@ -1612,16 +1671,18 @@ and create emotional resonance.
             <li>Debugged and optimized app performance</li>
             <li>Worked in team-based workshops</li>
           </ul>
+            </div>
+              <button class="resume-toggle-btn">Show more</button>
         </div>
 
         <!-- IT Specialist -->
         <div class="highlight-card secondary">
           <h4 class="highlight-title">IT Specialist</h4>
           <p class="highlight-period">Aug 2023 – Jun 2024 // Ali Al Sunaidi Foundation, Jeddah</p>
+            <div class="resume-more">
           <p class="highlight-description">
             Maintained IT systems and infrastructure while improving reliability and uptime.
           </p>
-              <button class="read-more-btn">Read more</button>
 <br>
           <ul class="highlight-list">
             <li>Increased system uptime to 99.9%</li>
@@ -1629,22 +1690,27 @@ and create emotional resonance.
             <li>Resolved recurring system issues</li>
             <li>Integrated software solutions</li>
           </ul>
+          </div>
+              <button class="resume-toggle-btn">Show more</button>
         </div>
 
         <!-- Education -->
         <div class="highlight-card">
           <h4 class="highlight-title">Bachelor of Computer Science (IT)</h4>
           <p class="highlight-period">2019 – 2023 // Al-Baha University</p>
+            <div class="resume-more">
+
           <p class="highlight-description">
             Specialized in Information Technology with focus on software development.
           </p>
-              <button class="read-more-btn">Read more</button>
 <br>
           <ul class="highlight-list">
             <li>Studied software engineering principles</li>
             <li>Built multiple academic projects</li>
             <li>Learned web & mobile technologies</li>
           </ul>
+            </div>
+              <button class="resume-toggle-btn">Show more</button>
         </div>
 
 
@@ -1900,6 +1966,16 @@ document.querySelectorAll(".read-more-btn").forEach(btn => {
     this.textContent = desc.classList.contains("expanded")
       ? "Show less"
       : "Read more";
+  });
+});
+document.querySelectorAll(".resume-toggle-btn").forEach(btn => {
+  btn.addEventListener("click", function () {
+    const card = this.closest(".highlight-card");
+    card.classList.toggle("expanded");
+
+    this.textContent = card.classList.contains("expanded")
+      ? "Show less"
+      : "Show more";
   });
 });
 
