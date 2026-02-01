@@ -477,9 +477,9 @@
 
     /* Connect Section */
     .social-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr; /* عمود واحد */
+  gap: 16px;
   width: 100%;
 }
     
@@ -492,7 +492,7 @@
       display: flex;
       align-items: center;
       gap: 16px;
-       width: 100%;
+      width: 100%;
       max-width: 100%;
       text-decoration: none;
       color: inherit;
@@ -579,9 +579,11 @@
        background: var(--bg-default);
   border-radius: 16px;
   padding: 24px;
-  max-width: 500px; /* 👈 تحكم بالعرض */
+  max-width: 800px; /* 👈 تحكم بالعرض */
     width: 100%;
   margin: 0 auto; 
+  margin-bottom: 32px;
+
     }
 
     .tiktok-header {
@@ -737,13 +739,11 @@
     max-width: 100%;
     width: 100%;
     margin: 0;
+    margin-bottom: 32px;
+
   }
 
-  .social-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
+
 
   .social-card {
     
@@ -751,6 +751,12 @@
     padding: 16px;
   }
 }
+@media (min-width: 1024px) {
+  .social-cards {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
 
   /* .social-cards {
     display: grid;
@@ -1118,6 +1124,51 @@
   background: rgba(180, 167, 214, 0.15);
   color: var(--accent-secondary);
 }
+.terminal-text {
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+.alt-form .field {
+  margin-bottom: 24px;
+}
+
+.alt-form label {
+  font-family: 'VT323', monospace;
+  color: var(--accent-secondary);
+  font-size: 16px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.alt-form input,
+.alt-form textarea,
+.alt-form select {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--accent-secondary);
+  padding: 8px 0;
+  color: var(--text-primary);
+  font-size: 15px;
+  outline: none;
+}
+
+.alt-form input:focus,
+.alt-form textarea:focus,
+.alt-form select:focus {
+  border-color: var(--accent);
+}
 
 
   </style>
@@ -1133,7 +1184,7 @@
       </div>
       <ul class="nav-links">
         <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#skills">Skills</a></li>
+        <!-- <li><a href="#skills">Skills</a></li> -->
         <li><a href="#resume">Resume</a></li>
         <li><a href="#connect">Connect</a></li>
       </ul>
@@ -1459,9 +1510,9 @@ and create emotional resonance.
   </div>
 </section>
 
-
- <!-- Skills Section -->
-<section class="section" id="skills">
+<!-- 
+ Skills Section -->
+<!-- <section class="section" id="skills">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">Skills</h2>
@@ -1472,10 +1523,10 @@ and create emotional resonance.
       // Tools & technologies I use to build clean and scalable iOS apps
     </p>
 
-    <div class="skills-section">
+    <div class="skills-section"> -->
 
       <!-- Languages -->
-      <div class="skills-category">
+      <!-- <div class="skills-category">
         <div class="category-header">
           <h3 class="category-title">Languages</h3>
           <div class="category-line"></div>
@@ -1502,10 +1553,10 @@ and create emotional resonance.
             <div class="skill-bar"><div class="skill-fill" style="width: 75%"></div></div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Frameworks -->
-      <div class="skills-category">
+      <!-- <div class="skills-category">
         <div class="category-header">
           <h3 class="category-title">Frameworks & Platforms</h3>
           <div class="category-line"></div>
@@ -1528,10 +1579,10 @@ and create emotional resonance.
             <div class="skill-bar"><div class="skill-fill" style="width: 70%"></div></div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Tools -->
-      <div class="skills-category">
+      <!-- <div class="skills-category">
         <div class="category-header">
           <h3 class="category-title">Tools</h3>
           <div class="category-line"></div>
@@ -1558,20 +1609,20 @@ and create emotional resonance.
             <div class="skill-bar"><div class="skill-fill" style="width: 60%"></div></div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Soft Skills -->
-      <div class="soft-skills">
+      <!-- <div class="soft-skills">
         <span class="soft-skill">✓ Problem Solving</span>
         <span class="soft-skill">✓ Fast Learner</span>
         <span class="soft-skill">✓ Time Management</span>
         <span class="soft-skill">✓ Team Collaboration</span>
         <span class="soft-skill">✓ Logical Thinking</span>
         <span class="soft-skill">✓ UI/UX Thinking</span>
-      </div>
+      </div> -->
 
       <!-- Stats -->
-      <div class="stats-container">
+      <!-- <div class="stats-container">
         <div class="stat-item">
           <div class="stat-value">2+</div>
           <div class="stat-label">Years in iOS</div>
@@ -1588,7 +1639,7 @@ and create emotional resonance.
 
     </div>
   </div>
-</section>
+</section>  -->
 
 
 
@@ -1733,8 +1784,8 @@ and create emotional resonance.
       // Find me on these platforms
     </p>
 
-<div class="connect-layout">
-<div class="tiktok-section">
+<!-- <div class="connect-layout"> -->
+<!-- <div class="tiktok-section">
   <h3 class="tiktok-header">Latest TikTok</h3>
 
 <div id="tiktok-placeholder">
@@ -1757,7 +1808,8 @@ and create emotional resonance.
     ↗ View on TikTok
   </a>
 </div>
-</div>
+</div> -->
+
     <!-- 👇 هنا الغلاف المهم -->
     <div class="social-cards">
 
@@ -1814,7 +1866,7 @@ and create emotional resonance.
 
     </div>
     <!-- 👆 نهاية الغلاف -->
-</div>
+
   </div>
 </section>
 
@@ -1827,14 +1879,13 @@ and create emotional resonance.
 <!-- Contact Section -->
 <div class="contact-section">
   <h3 class="contact-title">&lt;Contact /&gt;</h3>
-  <p class="contact-text">Let’s build something amazing together.</p>
-<br>
 
-  <form
-    class="contact-form"
-    action="https://formspree.io/f/xbddldey"
-    method="POST"
-  >
+  <p class="contact-text terminal-text">
+    > Have an idea? a project? or just want to say hi_<span class="cursor">|</span>
+  </p>
+
+  <form class="contact-form" action="https://formspree.io/f/xbddldey" method="POST">
+
     <input
       type="text"
       name="name"
@@ -1885,7 +1936,9 @@ and create emotional resonance.
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p style="font-family: 'VT323', monospace; font-size: 16px; letter-spacing: 1px;">Built with &lt;code /&gt; and &#9829;</p>
+      <p style="font-family: 'VT323', monospace; font-size: 16px; letter-spacing: 1px;">
+      © 2026 Saja Alhomrany — Crafted with &lt;code /&gt; & ♥
+      </p>
     </div>
   </footer>
 
