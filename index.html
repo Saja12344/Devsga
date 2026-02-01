@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iOS Dev Portfolio</title>
+
+  <!-- ✅ Canonical + Social Meta -->
+  <link rel="canonical" href="https://sajadev.com" />
+
+  <meta property="og:title" content="Saja Khalid – iOS Developer" />
+  <meta property="og:description" content="iOS Developer | SwiftUI | CloudKit | MVVM" />
+  <meta property="og:url" content="https://sajadev.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://sajadev.com/assets/images/icon.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Saja Khalid – iOS Developer" />
+  <meta name="twitter:description" content="iOS Developer | SwiftUI | CloudKit | MVVM" />
+  <meta name="twitter:image" content="https://sajadev.com/assets/images/icon.png" />
+
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Saja Khalid | iOS Developer – SwiftUI & CloudKit</title>
+
+<meta name="description" content="Saja Khalid is an iOS Developer specializing in SwiftUI, CloudKit, and MVVM. View projects, experience, and contact details on sajadev.com." />
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>iOS Dev Portfolio</title>
@@ -925,8 +949,108 @@
   }
 }
 
+.backend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.backend-card {
+  background: var(--bg-default);
+  border: 1px solid var(--accent-secondary);
+  border-radius: 16px;
+  padding: 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.backend-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(180, 167, 214, 0.15);
+}
+
+.backend-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.backend-description {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.backend-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.backend-features span {
+  font-family: 'VT323', monospace;
+  font-size: 14px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: rgba(180, 167, 214, 0.15);
+  color: var(--accent-secondary);
+}
+
+.backend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.backend-card {
+  background: var(--bg-default);
+  border: 1px solid var(--accent-secondary);
+  border-radius: 16px;
+  padding: 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.backend-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(180, 167, 214, 0.15);
+}
+
+.backend-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.backend-description {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.backend-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.backend-features span {
+  font-family: 'VT323', monospace;
+  font-size: 14px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: rgba(180, 167, 214, 0.15);
+  color: var(--accent-secondary);
+}
+
+
   </style>
 </head>
+
 <body>
   <!-- Navigation -->
   <nav>
@@ -953,8 +1077,11 @@
       </div>
       <h1 class="pixel-font">I build <span id="typed"></span></h1>
 
-      <p class="subtitle">Crafting beautiful native experiences with Swift & SwiftUI</p>
-      <div class="tagline">// Building the future, one app at a time</div>
+   <p class="subtitle">
+  Crafting scalable software products across web, mobile, and backend
+</p>
+<div class="tagline">// Turning ideas into real, production-ready solutions</div>
+
     </div>
   </section>
 
@@ -1170,7 +1297,91 @@ and create emotional resonance.
   </div>
 </section>
 
- 
+ <section class="section" id="backend">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Backend Projects</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <p style="color: var(--text-secondary); margin-bottom: 32px; font-family: 'VT323', monospace; font-size: 18px; letter-spacing: 1px;">
+      // Server-side systems, APIs & logic
+    </p>
+
+    <div class="backend-grid">
+
+      <!-- Backend Project 1 -->
+      <div class="backend-card">
+        <h3 class="backend-title">Speech Analysis API</h3>
+        <p class="backend-description">
+          A backend service that analyzes speech-to-text input and evaluates vocal delivery, pace,
+          filler words, and content structure. Designed to support real-time feedback for presentation
+          and communication training.
+        </p>
+
+        <div class="backend-features">
+          <span>REST API</span>
+          <span>Speech-to-Text</span>
+          <span>AI Scoring Logic</span>
+        </div>
+
+        <div class="tech-stack">
+          <span class="tech-badge">Node.js</span>
+          <span class="tech-badge">Express</span>
+          <span class="tech-badge">AI Logic</span>
+          <span class="tech-badge">JSON</span>
+        </div>
+      </div>
+
+       <!-- Movie Data System -->
+      <div class="backend-card">
+        <h3 class="backend-title">Movie Data Management System</h3>
+        <p class="backend-description">
+          A data-driven system built around RESTful APIs to manage movies,
+          actors, directors, and reviews. The project focuses on consuming
+          CRUD endpoints, modeling relational data, handling asynchronous
+          requests, and managing error and loading states reliably.
+        </p>
+
+        <div class="backend-features">
+          <span>CRUD Operations</span>
+          <span>REST API Consumption</span>
+          <span>Relational Data</span>
+        </div>
+
+        <div class="tech-stack">
+          <span class="tech-badge">REST APIs</span>
+          <span class="tech-badge">JSON</span>
+          <span class="tech-badge">Postman</span>
+          <span class="tech-badge">Data Modeling</span>
+        </div>
+      </div>
+
+      <!-- Backend Project 3 -->
+      <div class="backend-card">
+        <h3 class="backend-title">CloudKit Data Layer</h3>
+        <p class="backend-description">
+          A structured CloudKit backend layer handling public and private databases,
+          user authentication, relational records, and data syncing across devices.
+        </p>
+
+        <div class="backend-features">
+          <span>Public & Private DB</span>
+          <span>Sync Logic</span>
+          <span>Access Control</span>
+        </div>
+
+        <div class="tech-stack">
+          <span class="tech-badge">CloudKit</span>
+          <span class="tech-badge">iCloud</span>
+          <span class="tech-badge">Data Modeling</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
  <!-- Skills Section -->
 <section class="section" id="skills">
@@ -1585,13 +1796,14 @@ mobileMenuBtn.addEventListener('click', () => {
   navLinks.classList.toggle('mobile-open');
 });
 
-    const words = [
-  "iOS apps",
-  "SwiftUI experiences",
-  "real products",
-  "beautiful UIs",
-  "scalable systems"
+  const words = [
+  "software solutions",
+  "web & mobile apps",
+  "scalable systems",
+  "clean architectures",
+  "real-world products"
 ];
+
 
 let i = 0;
 let j = 0;
