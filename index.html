@@ -16,7 +16,7 @@
   <meta property="og:image" content="https://sajadev.com/assets/images/icon.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Saja Khalid – iOS Developer" />
+  <meta name="twitter:title" content="Saja Alhomrany – software engineering" />
   <meta name="twitter:description" content="iOS Developer | SwiftUI | CloudKit | MVVM" />
   <meta name="twitter:image" content="https://sajadev.com/assets/images/icon.png" />
 
@@ -56,6 +56,7 @@
       color: var(--text-primary);
       line-height: 1.6;
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
     .pixel-font {
@@ -451,19 +452,12 @@
 
     /* Connect Section */
     .social-cards {
-      /* display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 16px;
-      margin-bottom: 40px; */
-
-
-  /* display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  margin-bottom: 48px; */
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
 }
+    
 
     .social-card {
       background: var(--bg-default);
@@ -473,11 +467,11 @@
       display: flex;
       align-items: center;
       gap: 16px;
+       width: 100%;
+      max-width: 100%;
       text-decoration: none;
       color: inherit;
       transition: background 0.2s, transform 0.2s;
-
-
     }
 
     .social-card:hover {
@@ -670,7 +664,17 @@
       cursor: pointer;
     }
 
+
     @media (max-width: 768px) {
+  .pixel-font {
+    letter-spacing: 0.5px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
       .nav-links {
         display: none;
       }
@@ -678,10 +682,12 @@
       .mobile-menu-btn {
         display: block;
       }
+     .hero {
+    padding-top: 100px;
+    padding-bottom: 48px;
+     }
 
-      .hero h1 {
-        font-size: 32px;
-      }
+
 
       .projects-grid {
         grid-template-columns: 1fr;
@@ -692,24 +698,15 @@
         gap: 24px;
       }
 
-      /* .social-cards {
-          display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 28px;
-  margin-bottom: 48px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-      } */
        .connect-layout {
     grid-template-columns: 1fr;
   }
 
-  .social-cards {
+  /* .social-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-  }
+  } */
     }
     .connect-layout {
       display: grid;
@@ -750,6 +747,30 @@
       align-items: center;
       gap: 8px;
     }
+/* ===== Mobile Skills Optimization ===== */
+@media (max-width: 768px) {
+
+  /* نخفي أشرطة النسبة */
+  .skill-bar {
+    display: none;
+  }
+
+  /* نقلل حجم الكروت */
+  .skill-badge {
+    padding: 10px 12px;
+    min-width: unset;
+  }
+
+  /* نخلي المهارات أقرب لبعض */
+  .skills-grid {
+    gap: 8px;
+  }
+
+  /* نخفي الإحصائيات (مره تطوّل الصفحة) */
+  .stats-container {
+    display: none;
+  }
+}
 
     /* Resume Section */
     .resume-section {
@@ -1075,11 +1096,10 @@
       <div class="avatar-container">
         <img src="/assets/images/icon.png" alt="Avatar">
       </div>
-      <h1 class="pixel-font">I build <span id="typed"></span></h1>
+    <h1 class="pixel-font">
+     I build <span id="typed"></span><span class="cursor">|</span>
+     </h1>
 
-   <p class="subtitle">
-  Crafting scalable software products across web, mobile, and backend
-</p>
 <div class="tagline">// Turning ideas into real, production-ready solutions</div>
 
     </div>
@@ -1313,11 +1333,13 @@ and create emotional resonance.
       <!-- Backend Project 1 -->
       <div class="backend-card">
         <h3 class="backend-title">Speech Analysis API</h3>
-        <p class="backend-description">
+        <p class="project-description">
           A backend service that analyzes speech-to-text input and evaluates vocal delivery, pace,
           filler words, and content structure. Designed to support real-time feedback for presentation
           and communication training.
         </p>
+            <button class="read-more-btn">Read more</button>
+<br>
 
         <div class="backend-features">
           <span>REST API</span>
@@ -1336,16 +1358,18 @@ and create emotional resonance.
        <!-- Movie Data System -->
       <div class="backend-card">
         <h3 class="backend-title">Movie Data Management System</h3>
-        <p class="backend-description">
+        <p class="project-description">
           A data-driven system built around RESTful APIs to manage movies,
           actors, directors, and reviews. The project focuses on consuming
           CRUD endpoints, modeling relational data, handling asynchronous
           requests, and managing error and loading states reliably.
         </p>
+            <button class="read-more-btn">Read more</button>
+<br>
 
         <div class="backend-features">
           <span>CRUD Operations</span>
-          <span>REST API Consumption</span>
+          <span>REST APIs</span>
           <span>Relational Data</span>
         </div>
 
@@ -1360,10 +1384,12 @@ and create emotional resonance.
       <!-- Backend Project 3 -->
       <div class="backend-card">
         <h3 class="backend-title">CloudKit Data Layer</h3>
-        <p class="backend-description">
+        <p class="project-description">
           A structured CloudKit backend layer handling public and private databases,
           user authentication, relational records, and data syncing across devices.
         </p>
+            <button class="read-more-btn">Read more</button>
+<br>
 
         <div class="backend-features">
           <span>Public & Private DB</span>
@@ -1544,6 +1570,8 @@ and create emotional resonance.
           <p class="highlight-description">
             Working in multidisciplinary teams to design and prototype innovative iOS applications using Swift and Xcode.
           </p>
+              <button class="read-more-btn">Read more</button>
+<br>
           <ul class="highlight-list">
             <li>Developed iOS apps using Swift & SwiftUI</li>
             <li>Participated in Agile sprints and daily standups</li>
@@ -1559,6 +1587,8 @@ and create emotional resonance.
           <p class="highlight-description">
             Developed and tested app features in an Agile environment, collaborating remotely with cross-functional teams.
           </p>
+              <button class="read-more-btn">Read more</button>
+<br>
           <ul class="highlight-list">
             <li>Implemented SwiftUI views and logic</li>
             <li>Used GitHub for version control & collaboration</li>
@@ -1574,6 +1604,8 @@ and create emotional resonance.
           <p class="highlight-description">
             Built an iOS prototype with scalable architecture and responsive UI layouts.
           </p>
+              <button class="read-more-btn">Read more</button>
+<br>
           <ul class="highlight-list">
             <li>Developed core features using SwiftUI</li>
             <li>Implemented tab navigation & data handling</li>
@@ -1589,6 +1621,8 @@ and create emotional resonance.
           <p class="highlight-description">
             Maintained IT systems and infrastructure while improving reliability and uptime.
           </p>
+              <button class="read-more-btn">Read more</button>
+<br>
           <ul class="highlight-list">
             <li>Increased system uptime to 99.9%</li>
             <li>Installed and configured routers & switches</li>
@@ -1604,6 +1638,8 @@ and create emotional resonance.
           <p class="highlight-description">
             Specialized in Information Technology with focus on software development.
           </p>
+              <button class="read-more-btn">Read more</button>
+<br>
           <ul class="highlight-list">
             <li>Studied software engineering principles</li>
             <li>Built multiple academic projects</li>
