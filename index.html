@@ -1152,7 +1152,7 @@
 
 .project-card.feature-project {
   grid-column: span 6;
-  min-height: 520px;
+  min-height: 560px;
   border-color: rgba(180, 167, 214, 0.45);
 }
 
@@ -1172,21 +1172,42 @@
 }
 
 .project-thumbnail {
-  height: 240px;
+  height: 260px;
   background:
     radial-gradient(circle at 25% 15%, rgba(180, 167, 214, 0.25), transparent 34%),
     radial-gradient(circle at 82% 72%, rgba(127, 217, 159, 0.16), transparent 30%),
     #080b11;
+  padding: 12px;
 }
 
 .project-card.feature-project .project-thumbnail {
-  height: 330px;
+  height: 390px;
 }
 
 .project-thumbnail img {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  padding: 12px;
+  padding: 0;
   transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.project-thumbnail.poster-shot {
+  background:
+    radial-gradient(circle at 50% 42%, rgba(180, 167, 214, 0.22), transparent 42%),
+    linear-gradient(145deg, rgba(127, 217, 159, 0.08), rgba(180, 167, 214, 0.1)),
+    #05070c;
+}
+
+.project-thumbnail.poster-shot img {
+  max-width: 72%;
+  margin: 0 auto;
+  display: block;
+}
+
+.project-thumbnail.wide-shot img {
+  width: 100%;
+  height: 100%;
 }
 
 .project-card:hover .project-thumbnail img {
@@ -1326,7 +1347,11 @@ body[dir="rtl"] .highlight-list li::before {
 @media (max-width: 640px) {
   .project-card.feature-project .project-thumbnail,
   .project-thumbnail {
-    height: 220px;
+    height: 280px;
+  }
+
+  .project-thumbnail.poster-shot img {
+    max-width: 82%;
   }
 
   .project-content {
@@ -1440,7 +1465,7 @@ body[dir="rtl"] .highlight-list li::before {
     <div class="projects-grid">
 <!-- Sensic -->
 <div class="project-card feature-project">
-  <div class="project-thumbnail">
+  <div class="project-thumbnail poster-shot">
      <img src="/assets/images/sensic.png" alt="Sensic music haptics app">
   </div>
   <div class="project-content">
@@ -1464,7 +1489,7 @@ body[dir="rtl"] .highlight-list li::before {
 
 <!-- Orbit Goals -->
 <div class="project-card feature-project">
-  <div class="project-thumbnail">
+  <div class="project-thumbnail wide-shot">
      <img src="/assets/images/orbit.png" alt="Orbit goal tracking app onboarding">
   </div>
   <div class="project-content">
