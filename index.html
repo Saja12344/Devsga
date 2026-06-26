@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Software Engineer Portfolio</title>
-<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -270,7 +265,8 @@
 .project-thumbnail img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 10px;
 }
 
     .project-content {
@@ -1188,11 +1184,13 @@
 }
 
 .project-thumbnail img {
+  object-fit: contain;
+  padding: 12px;
   transition: transform 0.6s ease, filter 0.6s ease;
 }
 
 .project-card:hover .project-thumbnail img {
-  transform: scale(1.045);
+  transform: none;
   filter: saturate(1.1) contrast(1.04);
 }
 
@@ -1263,6 +1261,54 @@
 .social-card .social-icon svg {
   width: 28px;
   height: 28px;
+}
+
+.language-toggle {
+  border: 1px solid rgba(127, 217, 159, 0.45);
+  background: rgba(127, 217, 159, 0.08);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.language-toggle:hover {
+  transform: translateY(-2px);
+  background: rgba(127, 217, 159, 0.16);
+}
+
+body[dir="rtl"] {
+  direction: rtl;
+}
+
+body[dir="rtl"] .nav-content,
+body[dir="rtl"] .section-header,
+body[dir="rtl"] .category-header,
+body[dir="rtl"] .resume-header {
+  direction: rtl;
+}
+
+body[dir="rtl"] .project-content,
+body[dir="rtl"] .portfolio-kicker,
+body[dir="rtl"] .backend-description,
+body[dir="rtl"] .highlight-description,
+body[dir="rtl"] .contact-text,
+body[dir="rtl"] .contact-form {
+  text-align: right;
+}
+
+body[dir="rtl"] .highlight-list li {
+  padding-left: 0;
+  padding-right: 16px;
+}
+
+body[dir="rtl"] .highlight-list li::before {
+  left: auto;
+  right: 0;
 }
 
 @media (max-width: 960px) {
@@ -1357,6 +1403,7 @@
         <li><a href="#resume">Resume</a></li>
         <li><a href="#connect">Connect</a></li>
       </ul>
+      <button class="language-toggle" type="button" aria-label="Switch language">العربية</button>
       <button class="mobile-menu-btn">&#9776;</button>
     </div>
   </nav>
@@ -2174,13 +2221,125 @@ mobileMenuBtn.addEventListener('click', () => {
   navLinks.classList.toggle('mobile-open');
 });
 
-  const words = [
-  "software solutions",
-  "web & mobile apps",
-  "scalable systems",
-  "clean architectures",
-  "real-world products"
-];
+const languageToggle = document.querySelector('.language-toggle');
+
+const translations = {
+  en: {
+    lang: "en",
+    dir: "ltr",
+    switchLabel: "العربية",
+    title: "Saja Khalid | Software Engineer",
+    nav: ["Portfolio", "Resume", "Connect"],
+    heroPrefix: "I build",
+    typedWords: ["software solutions", "web & mobile apps", "scalable systems", "clean architectures", "real-world products"],
+    tagline: "// Turning ideas into real, production-ready solutions",
+    sectionTitles: ["Projects", "Backend Projects", "Resume", "Let's Connect"],
+    portfolioKicker: "Selected product work across iOS, UI/UX, backend integration, and polished launch-ready experiences.",
+    readMore: "Read more",
+    readLess: "Show less",
+    showMore: "Show more",
+    projects: [
+      ["Sensic", "A sensory music experience that turns sound into touch through custom haptic controls. The app includes recording flows, practice mode, haptic intensity and sharpness tuning, and a polished iOS interface built around accessibility, rhythm, and emotional interaction."],
+      ["Orbit Goals", "A goal-tracking product concept built around momentum, friendly rivalry, and visual progress. The onboarding system introduces goal shapes, motion-based milestones, and a clear task orbit that helps users turn ambitions into small, repeatable actions."],
+      ["Abjad Kindergarten", "A clean and engaging website for Abjad Kindergarten designed to provide parents with easy access to key information and contact details. The site emphasizes clarity, trust, and a smooth user experience. Built using React with a focus on structure, flow, and usability to make navigation simple and communication effortless."],
+      ["Movie App", "An iOS app built with SwiftUI using real backend APIs. I implemented the full UI from Figma designs, integrated multiple endpoints, handled relational data, and built stable loading/error states."],
+      ["Wathiqni", "A privacy-first verification platform designed to reduce fraud and unnecessary data sharing. It enables secure identity confirmation between individuals and companies, as well as peer-to-peer verification without exposing sensitive personal information."],
+      ["Glutinc", "A community-driven iOS application designed for people with gluten sensitivity. The app allows users to scan food products, view ingredient details, and check gluten safety in real time. Users can also share personal experiences, rate products, and explore community-recommended gluten-free options."],
+      ["Learning Journey", "A habit-based iOS learning tracker that focuses on building consistency through streaks and visual progress indicators. The app includes dynamic success and failure states that respond to user actions in real time, helping users stay motivated."],
+      ["Colora", "A creative self-reflection iOS app that merges guided drawing, emotional prompts, and journaling into a single interactive experience. Users can express emotions through a dynamic canvas, track progress, and maintain habits with a streak-based system."],
+      ["Flavor Vista AI", "A full UI/UX overhaul of an AI-powered platform aimed at simplifying complex workflows and enhancing the overall user experience. I redesigned the interface from the ground up using Figma, redefined navigation patterns, and optimized user flows."],
+      ["Jareeb", "A time-aware recommendation app that suggests activities and places based on how much free time the user has. The app emphasizes clean navigation, clear decision-making flows, and accessibility-focused UI patterns."],
+      ["VERGE", "A conceptual fashion UI/UX project that blends cultural identities into a cohesive digital experience. The design emphasizes meaning-driven interactions, visual storytelling, and a modern aesthetic that reflects authenticity and diversity."]
+    ],
+    backendIntro: "// Server-side systems, APIs & logic",
+    backend: [
+      ["Speech Analysis API", "A backend service that analyzes speech-to-text input and evaluates vocal delivery, pace, filler words, and content structure. Designed to support real-time feedback for presentation and communication training."],
+      ["Movie Data Management System", "A data-driven system built around RESTful APIs to manage movies, actors, directors, and reviews. The project focuses on consuming CRUD endpoints, modeling relational data, handling asynchronous requests, and managing error states."],
+      ["CloudKit Data Layer", "A structured CloudKit backend layer handling public and private databases, user authentication, relational records, and data syncing across devices."]
+    ],
+    resumeIntro: "// My professional journey & experience",
+    resumeDownload: "View Resume (PDF)",
+    resume: [
+      ["iOS Developer (Part-time)", "Aug 2024 – Present // Apple Developer Academy, Riyadh", "Working in multidisciplinary teams to design and prototype innovative iOS applications using Swift and Xcode.", ["Developed iOS apps using Swift & SwiftUI", "Participated in Agile sprints and daily standups", "Contributed to code reviews and UI/UX decisions", "Built interactive prototypes and MVPs"]],
+      ["iOS Developer Intern", "May 2025 – Apr 2025 // Macromin Solution (Remote)", "Developed and tested app features in an Agile environment, collaborating remotely with cross-functional teams.", ["Implemented SwiftUI views and logic", "Used GitHub for version control & collaboration", "Participated in UI/UX discussions using Figma", "Followed Apple Human Interface Guidelines"]],
+      ["iOS Developer Intern", "Nov 2024 – Dec 2024 // Apple Foundation Program, Riyadh", "Built an iOS prototype with scalable architecture and responsive UI layouts.", ["Developed core features using SwiftUI", "Implemented tab navigation & data handling", "Debugged and optimized app performance", "Worked in team-based workshops"]],
+      ["IT Specialist", "Aug 2023 – Jun 2024 // Ali Al Sunaidi Foundation, Jeddah", "Maintained IT systems and infrastructure while improving reliability and uptime.", ["Increased system uptime to 99.9%", "Installed and configured routers & switches", "Resolved recurring system issues", "Integrated software solutions"]],
+      ["Bachelor of Computer Science (IT)", "2019 – 2023 // Al-Baha University", "Specialized in Information Technology with focus on software development.", ["Studied software engineering principles", "Built multiple academic projects", "Learned web & mobile technologies"]]
+    ],
+    connectIntro: "// Find me on these platforms",
+    contactTitle: "<Contact />",
+    contactText: "> Have an idea? a project? _",
+    form: {
+      name: "Your name",
+      email: "Your email",
+      phone: "Phone (optional)",
+      reason: "Reason for contact",
+      options: ["Reason for contact", "Freelance", "Consultation", "Collaboration", "Other"],
+      message: "Write your message...",
+      button: "Send Message ↗"
+    },
+    footer: "© 2026 Saja Alhomrany — Crafted with &lt;code /&gt; & ♥"
+  },
+  ar: {
+    lang: "ar",
+    dir: "rtl",
+    switchLabel: "English",
+    title: "سجى خالد | مهندسة برمجيات",
+    nav: ["الأعمال", "السيرة", "تواصل"],
+    heroPrefix: "أبني",
+    typedWords: ["حلول برمجية", "تطبيقات ويب وجوال", "أنظمة قابلة للتوسع", "معماريات نظيفة", "منتجات واقعية"],
+    tagline: "// تحويل الأفكار إلى حلول حقيقية جاهزة للإطلاق",
+    sectionTitles: ["المشاريع", "مشاريع الباكند", "السيرة", "تواصل معي"],
+    portfolioKicker: "مختارات من أعمال المنتج عبر iOS وتجربة المستخدم وتكاملات الباكند وتجارب جاهزة للإطلاق.",
+    readMore: "اقرأ المزيد",
+    readLess: "عرض أقل",
+    showMore: "عرض المزيد",
+    projects: [
+      ["Sensic", "تجربة موسيقية حسية تحول الصوت إلى لمسات عبر تحكمات haptics مخصصة. يضم التطبيق تسجيلات، وضع تدريب، ضبط شدة ونعومة الاهتزاز، وواجهة iOS مصممة حول الوصولية والإيقاع والتفاعل العاطفي."],
+      ["Orbit Goals", "تصور منتج لتتبع الأهداف مبني حول الزخم والمنافسة اللطيفة والتقدم البصري. يعرّف نظام البداية أشكال الأهداف والمعالم المتحركة ومسار المهام لتحويل الطموحات إلى خطوات صغيرة متكررة."],
+      ["Abjad Kindergarten", "موقع واضح وجذاب لروضة أبجد يساعد أولياء الأمور على الوصول للمعلومات الأساسية وطرق التواصل بسهولة، مع تركيز على الثقة وتجربة استخدام سلسة وبنية React منظمة."],
+      ["Movie App", "تطبيق iOS مبني بـ SwiftUI ومتصل بواجهات API حقيقية. نفذت الواجهة من تصاميم Figma، وربطت عدة endpoints، وتعاملت مع البيانات العلائقية وحالات التحميل والأخطاء."],
+      ["Wathiqni", "منصة تحقق تركز على الخصوصية لتقليل الاحتيال ومشاركة البيانات غير الضرورية، وتمكّن التحقق الآمن بين الأفراد والشركات أو بين الأفراد بدون كشف معلومات حساسة."],
+      ["Glutinc", "تطبيق iOS مجتمعي للأشخاص ذوي حساسية الغلوتين، يتيح فحص المنتجات ومعرفة تفاصيل المكونات وسلامة الغلوتين، مع مشاركة التجارب وتقييم المنتجات وخيارات خالية من الغلوتين."],
+      ["Learning Journey", "تطبيق iOS لتتبع التعلم والعادات يركز على الاستمرارية من خلال streaks ومؤشرات تقدم بصرية، مع حالات نجاح وفشل ديناميكية تساعد المستخدم على الاستمرار."],
+      ["Colora", "تطبيق iOS للتأمل الذاتي يدمج الرسم الموجه والمحفزات العاطفية والتدوين في تجربة تفاعلية واحدة، مع كانفاس ديناميكي وتقويم مخصص ونظام عادات."],
+      ["Flavor Vista AI", "إعادة تصميم UI/UX لمنصة مدعومة بالذكاء الاصطناعي بهدف تبسيط سير العمل وتحسين تجربة المستخدم، مع إعادة بناء التنقل وتدفقات الاستخدام عبر Figma."],
+      ["Jareeb", "تطبيق توصيات ذكي يقترح أنشطة وأماكن حسب وقت الفراغ المتاح لدى المستخدم، مع تنقل واضح وأنماط واجهة تراعي الوصولية وتجربة اتخاذ القرار."],
+      ["VERGE", "مشروع UI/UX مفاهيمي في مجال الأزياء يمزج الهويات الثقافية في تجربة رقمية متماسكة، مع تركيز على السرد البصري والتفاعل المرتبط بالمعنى."]
+    ],
+    backendIntro: "// أنظمة الخادم وواجهات API والمنطق",
+    backend: [
+      ["Speech Analysis API", "خدمة backend تحلل النص المحول من الكلام وتقيم الأداء الصوتي والسرعة والكلمات الزائدة وبنية المحتوى لدعم ملاحظات فورية للتدريب على العروض والتواصل."],
+      ["Movie Data Management System", "نظام بيانات مبني حول REST APIs لإدارة الأفلام والممثلين والمخرجين والمراجعات، مع نمذجة بيانات علائقية والتعامل مع الطلبات غير المتزامنة وحالات الأخطاء."],
+      ["CloudKit Data Layer", "طبقة بيانات CloudKit منظمة للتعامل مع قواعد بيانات عامة وخاصة، مصادقة المستخدمين، السجلات العلائقية، ومزامنة البيانات بين الأجهزة."]
+    ],
+    resumeIntro: "// رحلتي المهنية وخبراتي",
+    resumeDownload: "عرض السيرة الذاتية (PDF)",
+    resume: [
+      ["مطورة iOS - دوام جزئي", "أغسطس 2024 – الآن // Apple Developer Academy، الرياض", "العمل ضمن فرق متعددة التخصصات لتصميم ونمذجة تطبيقات iOS مبتكرة باستخدام Swift وXcode.", ["تطوير تطبيقات iOS باستخدام Swift وSwiftUI", "المشاركة في سبرنتات Agile واجتماعات يومية", "المساهمة في مراجعات الكود وقرارات UI/UX", "بناء نماذج تفاعلية وMVPs"]],
+      ["متدربة تطوير iOS", "مايو 2025 – أبريل 2025 // Macromin Solution (عن بعد)", "تطوير واختبار مزايا التطبيق ضمن بيئة Agile بالتعاون عن بعد مع فرق متعددة.", ["تنفيذ واجهات ومنطق SwiftUI", "استخدام GitHub لإدارة الإصدارات والتعاون", "المشاركة في نقاشات UI/UX عبر Figma", "اتباع إرشادات Apple Human Interface"]],
+      ["متدربة تطوير iOS", "نوفمبر 2024 – ديسمبر 2024 // Apple Foundation Program، الرياض", "بناء نموذج iOS ببنية قابلة للتوسع وواجهات متجاوبة.", ["تطوير المزايا الأساسية باستخدام SwiftUI", "تنفيذ التنقل عبر التبويبات ومعالجة البيانات", "تصحيح الأخطاء وتحسين الأداء", "العمل ضمن ورش جماعية"]],
+      ["أخصائية تقنية معلومات", "أغسطس 2023 – يونيو 2024 // مؤسسة علي السنيدي، جدة", "صيانة أنظمة وبنية تقنية المعلومات مع تحسين الاعتمادية ووقت التشغيل.", ["رفع جاهزية النظام إلى 99.9%", "تركيب وإعداد الراوترات والسويتشات", "حل المشاكل المتكررة", "دمج حلول برمجية"]],
+      ["بكالوريوس علوم حاسب - تقنية معلومات", "2019 – 2023 // جامعة الباحة", "تخصص تقنية معلومات مع تركيز على تطوير البرمجيات.", ["دراسة مبادئ هندسة البرمجيات", "بناء عدة مشاريع أكاديمية", "تعلم تقنيات الويب والجوال"]]
+    ],
+    connectIntro: "// حساباتي وروابط التواصل",
+    contactTitle: "<تواصل />",
+    contactText: "> عندك فكرة؟ مشروع؟ _",
+    form: {
+      name: "اسمك",
+      email: "بريدك الإلكتروني",
+      phone: "رقم الجوال (اختياري)",
+      reason: "سبب التواصل",
+      options: ["سبب التواصل", "عمل حر", "استشارة", "تعاون", "أخرى"],
+      message: "اكتب رسالتك...",
+      button: "إرسال الرسالة ↗"
+    },
+    footer: "© 2026 سجى الحمراني — صُمم بـ &lt;code /&gt; و ♥"
+  }
+};
+
+let currentLang = "en";
+let words = translations.en.typedWords;
 
 
 let i = 0;
@@ -2188,7 +2347,7 @@ let j = 0;
 let isDeleting = false;
 
 const speed = 140;
-const el = document.getElementById("typed");
+let el = document.getElementById("typed");
 
 function typeEffect() {
   const current = words[i];
@@ -2215,6 +2374,105 @@ function typeEffect() {
 
 typeEffect();
 
+function updateToggleButtons(t) {
+  document.querySelectorAll(".read-more-btn").forEach(btn => {
+    const desc = btn.previousElementSibling;
+    btn.textContent = desc && desc.classList.contains("expanded") ? t.readLess : t.readMore;
+  });
+
+  document.querySelectorAll(".resume-toggle-btn").forEach(btn => {
+    const card = btn.closest(".highlight-card");
+    btn.textContent = card && card.classList.contains("expanded") ? t.readLess : t.showMore;
+  });
+}
+
+function applyLanguage(lang) {
+  currentLang = lang;
+  const t = translations[lang];
+
+  document.documentElement.lang = t.lang;
+  document.body.dir = t.dir;
+  document.title = t.title;
+  languageToggle.textContent = t.switchLabel;
+  languageToggle.setAttribute("aria-label", lang === "en" ? "Switch to Arabic" : "التبديل إلى الإنجليزية");
+
+  document.querySelectorAll(".nav-links a").forEach((link, index) => {
+    if (t.nav[index]) link.textContent = t.nav[index];
+  });
+
+  const heroTitle = document.querySelector(".hero h1");
+  heroTitle.innerHTML = `${t.heroPrefix} <span id="typed"></span><span class="cursor">|</span>`;
+  el = document.getElementById("typed");
+  words = t.typedWords;
+  i = 0;
+  j = 0;
+  isDeleting = false;
+  el.textContent = "";
+  document.querySelector(".tagline").textContent = t.tagline;
+
+  document.querySelectorAll(".section-title").forEach((title, index) => {
+    if (t.sectionTitles[index]) title.textContent = t.sectionTitles[index];
+  });
+
+  document.querySelector(".portfolio-kicker").textContent = t.portfolioKicker;
+
+  document.querySelectorAll(".projects-grid .project-card").forEach((card, index) => {
+    const item = t.projects[index];
+    if (!item) return;
+    card.querySelector(".project-title").textContent = item[0];
+    card.querySelector(".project-description").textContent = item[1];
+  });
+
+  const backendIntro = document.querySelector("#backend .container > p");
+  if (backendIntro) backendIntro.textContent = t.backendIntro;
+
+  document.querySelectorAll(".backend-card").forEach((card, index) => {
+    const item = t.backend[index];
+    if (!item) return;
+    card.querySelector(".backend-title").textContent = item[0];
+    card.querySelector(".project-description").textContent = item[1];
+  });
+
+  const resumeIntro = document.querySelector(".resume-intro");
+  if (resumeIntro) resumeIntro.textContent = t.resumeIntro;
+  const resumeDownload = document.querySelector(".download-btn");
+  if (resumeDownload) resumeDownload.textContent = t.resumeDownload;
+
+  document.querySelectorAll(".highlight-card").forEach((card, index) => {
+    const item = t.resume[index];
+    if (!item) return;
+    card.querySelector(".highlight-title").textContent = item[0];
+    card.querySelector(".highlight-period").textContent = item[1];
+    card.querySelector(".highlight-description").textContent = item[2];
+    card.querySelectorAll(".highlight-list li").forEach((li, liIndex) => {
+      if (item[3][liIndex]) li.textContent = item[3][liIndex];
+    });
+  });
+
+  const connectIntro = document.querySelector("#connect .container > p");
+  if (connectIntro) connectIntro.textContent = t.connectIntro;
+
+  document.querySelector(".contact-title").textContent = t.contactTitle;
+  document.querySelector(".contact-text").innerHTML = `${t.contactText}<span class="cursor">|</span>`;
+  document.querySelector('input[name="name"]').placeholder = t.form.name;
+  document.querySelector('input[name="email"]').placeholder = t.form.email;
+  document.querySelector('input[name="phone"]').placeholder = t.form.phone;
+  document.querySelector('textarea[name="message"]').placeholder = t.form.message;
+  document.querySelector(".contact-button").textContent = t.form.button;
+
+  const reasonSelect = document.querySelector('select[name="reason"]');
+  reasonSelect.querySelectorAll("option").forEach((option, index) => {
+    option.textContent = t.form.options[index];
+  });
+
+  document.querySelector("footer p").innerHTML = t.footer;
+  updateToggleButtons(t);
+}
+
+languageToggle.addEventListener("click", () => {
+  applyLanguage(currentLang === "en" ? "ar" : "en");
+});
+
 const sections = document.querySelectorAll(".section");
 
 const sectionObserver = new IntersectionObserver(entries => {
@@ -2240,8 +2498,8 @@ document.querySelectorAll(".read-more-btn").forEach(btn => {
     desc.classList.toggle("expanded");
 
     this.textContent = desc.classList.contains("expanded")
-      ? "Show less"
-      : "Read more";
+      ? translations[currentLang].readLess
+      : translations[currentLang].readMore;
   });
 });
 document.querySelectorAll(".resume-toggle-btn").forEach(btn => {
@@ -2250,8 +2508,8 @@ document.querySelectorAll(".resume-toggle-btn").forEach(btn => {
     card.classList.toggle("expanded");
 
     this.textContent = card.classList.contains("expanded")
-      ? "Show less"
-      : "Show more";
+      ? translations[currentLang].readLess
+      : translations[currentLang].showMore;
   });
 });
 
