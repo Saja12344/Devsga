@@ -3,2591 +3,1601 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Saja Khalid | Software Engineer</title>
-  <meta name="description" content="Saja Khalid is a Software Engineer specializing in iOS, web, and backend development. SwiftUI, CloudKit, APIs, and scalable systems." />
-
+  <title>Saja Alhomrany | Digital Product Engineer</title>
+  <meta name="description" content="Saja Alhomrany is a software engineer building mobile, web, backend, and AI-assisted digital products." />
   <link rel="canonical" href="https://sajadev.com" />
-
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/images/logo1.png" />
   <link rel="apple-touch-icon" href="/assets/images/logo1.png" />
-  <meta name="theme-color" content="#0A0E14" />
-
-  <!-- Open Graph -->
+  <meta name="theme-color" content="#050505" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sajadev.com" />
-  <meta property="og:title" content="Saja Khalid – Software Engineer" />
-  <meta property="og:description" content="Software Engineer | iOS, Web & Backend | SwiftUI, CloudKit, APIs" />
+  <meta property="og:title" content="Saja Alhomrany - Digital Product Engineer" />
+  <meta property="og:description" content="Premium software engineering showcase for product, mobile, web, backend, and AI-assisted development." />
   <meta property="og:image" content="https://sajadev.com/assets/images/logo1.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #050505;
+      --charcoal: #0b0c0d;
+      --ink: #111315;
+      --glass: rgba(255, 255, 255, 0.045);
+      --glass-strong: rgba(255, 255, 255, 0.075);
+      --line: rgba(255, 255, 255, 0.105);
+      --line-soft: rgba(255, 255, 255, 0.06);
+      --white: #f6f4ee;
+      --muted: rgba(246, 244, 238, 0.62);
+      --dim: rgba(246, 244, 238, 0.42);
+      --silver: #aeb6ba;
+      --radius-xl: 42px;
+      --radius-lg: 30px;
+      --shadow: 0 48px 140px rgba(0, 0, 0, 0.46);
+    }
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Saja Khalid – Software Engineer" />
-  <meta name="twitter:description" content="Software Engineer | iOS, Web & Backend" />
-  <meta name="twitter:image" content="https://sajadev.com/assets/images/logo1.png" />
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
- <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    :root {
-      --bg-root: #0A0E14;
-      --bg-default: #1A1F2E;
-      --bg-secondary: #252B3D;
-      --bg-tertiary: #303850;
-      --text-primary: #E8EAF0;
-      --text-secondary: #9BA3B4;
-      --accent: #7FD99F;
-      --accent-dark: #4A9D6E;
-      --accent-secondary: #B4A7D6;
-      --accent-secondary-dark: #8B7FB8;
-      --tiktok-red: #FE2C55;
+    html {
+      scroll-behavior: smooth;
+      background: #111820;
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg-root);
-      color: var(--text-primary);
-      line-height: 1.6;
       min-height: 100vh;
       overflow-x: hidden;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(ellipse at 15% 10%, rgba(225, 236, 238, 0.22), transparent 28%),
+        radial-gradient(ellipse at 78% 0%, rgba(99, 115, 126, 0.24), transparent 34%),
+        linear-gradient(135deg, #202a31 0%, #060708 44%, #18212a 100%);
+      color: var(--white);
     }
 
-    .pixel-font {
-      font-family: 'VT323', monospace;
-      letter-spacing: 2px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-.section {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.8s ease;
-}
-
-.section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-    /* Navigation */
-    nav {
+    body::before,
+    body::after {
+      content: "";
       position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    body::before {
+      background:
+        linear-gradient(115deg, transparent 0 20%, rgba(255, 255, 255, 0.14) 31%, transparent 44%),
+        linear-gradient(45deg, transparent 0 50%, rgba(158, 177, 190, 0.2) 59%, transparent 72%),
+        radial-gradient(ellipse at 55% 18%, rgba(255, 255, 255, 0.09), transparent 36%);
+      filter: blur(28px);
+      opacity: 0.9;
+      mix-blend-mode: screen;
+    }
+
+    body::after {
+      z-index: -3;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.014) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: radial-gradient(circle at center, black, transparent 76%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    .page-shell {
+      width: min(1180px, calc(100% - 44px));
+      margin: 28px auto;
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-xl);
+      background:
+        radial-gradient(ellipse at 22% 4%, rgba(204, 219, 224, 0.12), transparent 34%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.022), transparent 18%),
+        var(--black);
+      box-shadow: var(--shadow);
+      overflow: clip;
+      position: relative;
+    }
+
+    .page-shell::before {
+      content: "";
+      position: absolute;
+      inset: -24%;
+      pointer-events: none;
+      background:
+        linear-gradient(120deg, transparent 0 28%, rgba(230, 237, 238, 0.12) 37%, transparent 49%),
+        radial-gradient(ellipse at 76% 10%, rgba(102, 116, 126, 0.18), transparent 32%);
+      filter: blur(24px);
+      opacity: 0.9;
+    }
+
+    .site-nav {
+      position: sticky;
       top: 0;
-      left: 0;
-      right: 0;
-      background: rgba(10, 14, 20, 0.9);
-      backdrop-filter: blur(10px);
-      z-index: 100;
-      border-bottom: 1px solid var(--bg-secondary);
-    }
-
-    .nav-content {
+      z-index: 20;
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: center;
-      padding: 16px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
+      gap: 20px;
+      min-height: 68px;
+      padding: 0 clamp(20px, 3vw, 34px);
+      background: rgba(5, 5, 5, 0.72);
+      border-bottom: 1px solid var(--line-soft);
+      backdrop-filter: blur(22px);
     }
 
-    .logo {
-      display: flex;
+    .brand {
+      display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.02em;
     }
 
-    .logo img {
-      width: 36px;
-      height: 36px;
+    .brand img {
+      width: 24px;
+      height: 24px;
       border-radius: 8px;
-    }
-
-    .logo-text {
-      font-family: 'VT323', monospace;
-      font-size: 24px;
-      color: var(--accent);
-      letter-spacing: 1px;
+      opacity: 0.86;
     }
 
     .nav-links {
       display: flex;
-      gap: 32px;
-      list-style: none;
+      align-items: center;
+      gap: clamp(16px, 2.4vw, 34px);
+      color: var(--dim);
+      font-size: 12px;
     }
 
     .nav-links a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      transition: color 0.2s;
-      font-family: 'VT323', monospace;
-      font-size: 18px;
-      letter-spacing: 1px;
+      transition: color 0.2s ease;
     }
 
     .nav-links a:hover {
-      color: var(--accent);
+      color: var(--white);
     }
-    .nav-links.mobile-open {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 64px;
-  right: 20px;
-  background: var(--bg-default);
-  padding: 20px;
-  border-radius: 12px;
-  gap: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  z-index: 999;
-}
 
+    .lang-toggle {
+      border: 1px solid var(--line-soft);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 8px 12px;
+      font-size: 12px;
+      transition: 0.2s ease;
+    }
 
-    /* Hero Section */
+    .lang-toggle:hover {
+      color: var(--white);
+      border-color: var(--line);
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+    }
+
+    section {
+      padding: clamp(58px, 8vw, 108px) clamp(24px, 4vw, 54px);
+      border-top: 1px solid var(--line-soft);
+    }
+
     .hero {
-      padding: 140px 0 80px;
-      text-align: center;
+      min-height: calc(86vh - 80px);
+      display: grid;
+      align-content: space-between;
+      gap: 56px;
+      border-top: 0;
+      padding-top: clamp(54px, 7vw, 90px);
     }
 
-    .avatar-container {
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 24px;
-      border-radius: 50%;
-      background: var(--bg-secondary);
-      border: 3px solid var(--accent);
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(240px, 0.34fr);
+      gap: clamp(28px, 5vw, 78px);
+      align-items: end;
+    }
+
+    .eyebrow {
+      color: var(--dim);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin-top: 22px;
+      max-width: 860px;
+      font-size: clamp(64px, 9.4vw, 126px);
+      font-weight: 300;
+      letter-spacing: -0.075em;
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    .hero-copy {
+      max-width: 365px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .hero-actions {
       display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      min-height: 42px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--white);
+      font-size: 13px;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
     }
 
-    .avatar-container img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
+    .btn.primary {
+      background: var(--white);
+      color: var(--black);
+      border-color: transparent;
     }
 
-    .hero h1 {
-      font-size: 48px;
-      font-weight: 700;
-      margin-bottom: 12px;
+    .btn:hover {
+      transform: translateY(-2px);
     }
 
-    .hero .subtitle {
-      color: var(--text-secondary);
-      font-size: 18px;
-      margin-bottom: 24px;
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line-soft);
+      border: 1px solid var(--line-soft);
     }
 
-    .tagline {
-      display: inline-block;
-      font-family: 'VT323', monospace;
-      font-size: 20px;
-      color: var(--accent);
-      background: rgba(127, 217, 159, 0.1);
-      padding: 12px 24px;
-      border-radius: 8px;
-      letter-spacing: 1px;
+    .meta-card {
+      min-height: 132px;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.022);
+      backdrop-filter: blur(14px);
     }
 
-    /* Section Headers */
-    .section {
-      padding: 80px 0;
+    .meta-card span {
+      display: block;
+      color: var(--dim);
+      font-size: 12px;
+      margin-bottom: 28px;
     }
 
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 40px;
+    .meta-card strong {
+      display: block;
+      max-width: 210px;
+      font-size: clamp(18px, 2vw, 25px);
+      font-weight: 400;
+      line-height: 1.04;
+      letter-spacing: -0.045em;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.72fr) minmax(240px, 0.28fr);
+      gap: 34px;
+      align-items: end;
+      margin-bottom: clamp(30px, 4.5vw, 58px);
     }
 
     .section-title {
-      font-family: 'VT323', monospace;
-      font-size: 32px;
-      color: var(--accent);
-      letter-spacing: 2px;
+      font-size: clamp(52px, 8vw, 118px);
+      font-weight: 300;
+      line-height: 0.88;
+      letter-spacing: -0.085em;
     }
 
-    .section-line {
-      flex: 1;
-      height: 1px;
-      background: var(--accent);
-      opacity: 0.3;
+    .section-copy {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.65;
     }
 
-    /* Projects Grid */
-    .projects-grid {
+    .about-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+    }
+
+    .pill-card {
+      min-height: 150px;
+      grid-column: span 2;
+      padding: 22px;
+      border: 1px solid var(--line-soft);
+      border-radius: 26px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.11), rgba(255,255,255,0.022) 46%, rgba(255,255,255,0.06)),
+        rgba(255, 255, 255, 0.032);
+      backdrop-filter: blur(16px);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
       gap: 24px;
+      color: var(--white);
+      font-size: clamp(20px, 2.3vw, 31px);
+      font-weight: 300;
+      letter-spacing: -0.055em;
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.13);
+      transition: transform 0.26s ease, border-color 0.26s ease, box-shadow 0.26s ease;
+    }
+
+    .pill-card::before {
+      content: "";
+      position: absolute;
+      inset: -70% -35%;
+      background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.24) 45%, transparent 60%);
+      transform: translateX(-64%) rotate(8deg);
+      opacity: 0.72;
+      pointer-events: none;
+      transition: transform 0.7s ease;
+    }
+
+    .pill-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,0.2);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.16), 0 28px 70px rgba(0,0,0,0.28);
+    }
+
+    .pill-card:hover::before {
+      transform: translateX(62%) rotate(8deg);
+    }
+
+    .pill-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 24% 18%, rgba(255,255,255,0.2), transparent 28%),
+        linear-gradient(145deg, rgba(255,255,255,0.14), rgba(255,255,255,0.035) 52%, rgba(255,255,255,0.075)),
+        rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.22);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.26),
+        inset 0 -16px 28px rgba(255,255,255,0.018),
+        0 18px 44px rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .pill-icon::before {
+      content: "";
+      position: absolute;
+      inset: 1px 2px auto;
+      height: 38%;
+      border-radius: 18px 18px 12px 12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.13), transparent);
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .pill-icon svg {
+      position: relative;
+      z-index: 1;
+      width: 26px;
+      height: 26px;
+      fill: none;
+      stroke: rgba(246,244,238,0.82);
+      stroke-width: 1.45;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .pill-label {
+      position: relative;
+      z-index: 1;
+      max-width: 12ch;
+    }
+
+    .pill-card:nth-child(1),
+    .pill-card:nth-child(4) {
+      grid-column: span 3;
+    }
+
+    .featured-stack {
+      display: grid;
+      gap: clamp(46px, 7vw, 92px);
+    }
+
+    .feature-project {
+      display: grid;
+      grid-template-columns: minmax(0, 0.45fr) minmax(0, 0.55fr);
+      min-height: 640px;
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 20% 0%, rgba(255, 255, 255, 0.08), transparent 34%),
+        rgba(255, 255, 255, 0.022);
+      backdrop-filter: blur(18px);
+    }
+
+    .feature-project[data-case-study-url] {
+      cursor: pointer;
+    }
+
+    .feature-project.reverse {
+      grid-template-columns: minmax(0, 0.56fr) minmax(0, 0.44fr);
+    }
+
+    .project-brief {
+      padding: clamp(30px, 5vw, 56px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 42px;
+    }
+
+    .project-kicker {
+      color: var(--dim);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .project-brief h3 {
+      margin-top: 22px;
+      font-size: clamp(44px, 6vw, 86px);
+      font-weight: 300;
+      line-height: 0.92;
+      letter-spacing: -0.082em;
+    }
+
+    .project-title-link {
+      color: inherit;
+      transition: opacity 0.2s ease;
+    }
+
+    .project-title-link:hover {
+      opacity: 0.72;
+    }
+
+    .project-brief p {
+      max-width: 440px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .project-action {
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0 15px;
+      color: var(--white);
+      font-size: 12px;
+      background: rgba(255, 255, 255, 0.035);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .project-action::after {
+      content: "↗";
+      color: var(--dim);
+      font-size: 11px;
+    }
+
+    .project-action.store {
+      background: var(--white);
+      color: var(--black);
+      border-color: transparent;
+    }
+
+    .project-action.store::after {
+      color: rgba(0, 0, 0, 0.58);
+    }
+
+    .project-action:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.34);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      border: 1px solid var(--line-soft);
+      border-radius: 999px;
+      padding: 7px 10px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .project-media {
+      min-height: 100%;
+      display: grid;
+      place-items: center;
+      padding: clamp(28px, 5vw, 70px);
+      background:
+        radial-gradient(ellipse at 50% 20%, rgba(255,255,255,0.09), transparent 32%),
+        rgba(255,255,255,0.018);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-media::before {
+      content: "";
+      position: absolute;
+      inset: -30%;
+      background: var(--image-glow, radial-gradient(circle, rgba(255,255,255,0.09), transparent 46%));
+      filter: blur(42px);
+      opacity: 0.78;
+    }
+
+    .project-media img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-height: 520px;
+      object-fit: contain;
+      filter: drop-shadow(0 34px 70px rgba(0,0,0,0.38));
+    }
+
+    .project-media.poster img {
+      max-width: 360px;
+    }
+
+    .project-media.wide img {
+      max-width: 620px;
+    }
+
+    .project-media.orbit-showcase img {
+      max-width: min(680px, 100%);
+      max-height: 620px;
+    }
+
+    .project-media.sensic-showcase img {
+      max-width: min(620px, 100%);
+      max-height: 620px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
     }
 
     .project-card {
-      background: var(--bg-default);
-      border-radius: 12px;
+      min-height: 430px;
+      border: 1px solid var(--line-soft);
+      border-radius: 28px;
       overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
+      background: rgba(255, 255, 255, 0.028);
+      backdrop-filter: blur(16px);
+      transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+    }
+
+    .project-card[data-project-url] {
       cursor: pointer;
-      border: 1px solid transparent;
+    }
+
+    .project-card[data-project-name="Abjd"] .thumb {
+      padding: 0;
+      border-radius: 28px 28px 0 0;
+      clip-path: inset(0 round 28px 28px 0 0);
+    }
+
+    .project-card[data-project-name="Abjd"] .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.08);
+    }
+
+    .project-card[data-project-name="Glutinc"] .thumb img,
+    .project-card[data-project-name="Learning Journey"] .thumb img,
+    .project-card[data-project-name="Jareeb"] .thumb img {
+      width: 80%;
+      height: 80%;
+      object-fit: contain;
+    }
+
+    .project-card[data-project-name="Vista"] .thumb img {
+      width: 80%;
+      height: 80%;
+      object-fit: contain;
+    }
+
+    .project-card[data-project-name="Movie Center"] .thumb img {
+      width: 108%;
+      height: 108%;
+      object-fit: contain;
     }
 
     .project-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--accent-secondary);
-      box-shadow: 0 8px 32px rgba(180, 167, 214, 0.15);
+      transform: translateY(-6px);
+      border-color: var(--line);
+      box-shadow: 0 34px 90px rgba(0,0,0,0.28);
     }
 
-.project-thumbnail {
-  height: 180px;
-  background: var(--bg-secondary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.project-thumbnail img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 10px;
-}
-
-    .project-content {
-      padding: 20px;
-    }
-
-    .project-title {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .project-title.featured {
-      font-family: 'VT323', monospace;
-      font-size: 28px;
-      color: var(--accent);
-      letter-spacing: 1px;
-    }
-
-.project-description {
-  color: var(--text-secondary);
-  font-size: 14px;
-  margin-bottom: 12px;
-  line-height: 1.6;
-
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-
-  transition: all 0.3s ease;
-}
-
-.project-description.expanded {
-  -webkit-line-clamp: unset;
-}
-.read-more-btn {
-  background: none;
-  border: none;
-  color: var(--accent);
-  font-family: 'VT323', monospace;
-  font-size: 16px;
-  cursor: pointer;
-  padding: 0;
-  letter-spacing: 1px;
-}
-
-.read-more-btn:hover {
-  text-decoration: underline;
-}
-
-    .tech-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .tech-badge {
-      background: rgba(127, 217, 159, 0.15);
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 500;
-    }
-/* Resume toggle */
-.resume-more {
-  display: none;
-  margin-top: 12px;
-}
-
-.highlight-card.expanded .resume-more {
-  display: block;
-}
-
-.resume-toggle-btn {
-  margin-top: 12px;
-  background: none;
-  border: none;
-  color: var(--accent);
-  font-family: 'VT323', monospace;
-  font-size: 16px;
-  cursor: pointer;
-  padding: 0;
-  letter-spacing: 1px;
-}
-
-.resume-toggle-btn:hover {
-  text-decoration: underline;
-}
-
-    /* Skills Section */
-    .skills-section {
-      background: var(--bg-default);
-      border-radius: 16px;
-      padding: 40px;
-    }
-
-    .skills-category {
-      margin-bottom: 32px;
-    }
-
-    .skills-category:last-child {
-      margin-bottom: 0;
-    }
-
-    .category-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-
-    .category-title {
-      font-size: 18px;
-      font-weight: 600;
-    }
-
-    .category-line {
-      flex: 1;
-      height: 1px;
-      background: var(--accent-secondary);
-      opacity: 0.3;
-    }
-
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .skill-badge {
-      background: rgba(127, 217, 159, 0.15);
-      border: 1px solid var(--accent);
-      padding: 12px 16px;
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      min-width: 140px;
-    }
-
-    .skill-badge.secondary {
-      background: rgba(180, 167, 214, 0.15);
-      border-color: var(--accent-secondary);
-    }
-
-    .skill-name {
-      font-weight: 600;
-      font-size: 14px;
-      color: var(--accent);
-    }
-
-    .skill-badge.secondary .skill-name {
-      color: var(--accent-secondary);
-    }
-
-    .skill-bar {
-      height: 4px;
-      background: rgba(127, 217, 159, 0.3);
-      border-radius: 2px;
+    .thumb {
+      height: 250px;
+      display: grid;
+      place-items: center;
+      padding: 26px;
       overflow: hidden;
+      background:
+        radial-gradient(ellipse at 30% 10%, rgba(255,255,255,0.08), transparent 34%),
+        rgba(255,255,255,0.018);
     }
 
-    .skill-badge.secondary .skill-bar {
-      background: rgba(180, 167, 214, 0.3);
-    }
-
-    .skill-fill {
-      height: 100%;
-      background: var(--accent);
-      border-radius: 2px;
-    }
-
-    .skill-badge.secondary .skill-fill {
-      background: var(--accent-secondary);
-    }
-
-    /* Stats */
-    .stats-container {
-      display: flex;
-      justify-content: center;
-      gap: 60px;
-      margin-top: 40px;
-      padding: 32px;
-      background: var(--bg-secondary);
-      border-radius: 12px;
-    }
-
-    .stat-item {
-      text-align: center;
-    }
-
-    .stat-value {
-      font-size: 36px;
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    .stat-value.secondary {
-      color: var(--accent-secondary);
-    }
-
-    .stat-label {
-      color: var(--text-secondary);
-      font-size: 14px;
-      margin-top: 4px;
-    }
-
-    /* Connect Section */
-    .social-cards {
-  display: grid;
-  grid-template-columns: 1fr; /* عمود واحد */
-  gap: 16px;
-  width: 100%;
-}
-    
-
-    .social-card {
-      background: var(--bg-default);
-      border: 1px solid var(--accent-secondary);
-      border-radius: 16px;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
+    .thumb img {
       width: 100%;
-      max-width: 100%;
-      text-decoration: none;
-      color: inherit;
-      transition: background 0.2s, transform 0.2s;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 24px 44px rgba(0,0,0,0.34));
     }
 
-    .social-card:hover {
-      background: rgba(180, 167, 214, 0.1);
-      transform: translateY(-2px);
+    .card-body {
+      padding: 24px;
     }
 
-
-  .social-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.social-icon svg {
-  width: 22px;
-  height: 22px;
-  fill: currentColor;
-}
-
-/* LinkedIn */
-.social-icon.linkedin {
-  background: rgba(10, 102, 194, 0.2);
-  color: #0A66C2;
-}
-
-/* GitHub */
-.social-icon.github {
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-}
-
-/* TikTok */
-.social-icon.tiktok {
-  background: rgba(254, 44, 85, 0.2);
-  color: #FE2C55;
-}
-
-/* X (Twitter) */
-.social-icon.x,
-.social-icon.twitter {
-  background: rgba(255, 255, 255, 0.08);
-  color: #ffffff;
-}
-
-
-
-    .social-info {
-      flex: 1;
-        display: flex;
-  flex-direction: column;
-  gap: 2px;
+    .card-body h3 {
+      font-size: 28px;
+      font-weight: 400;
+      letter-spacing: -0.055em;
+      margin-bottom: 14px;
     }
 
-    .social-platform {
-      color: var(--text-secondary);
+    .card-body p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      color: var(--white);
       font-size: 12px;
     }
 
-    .social-username {
-      font-weight: 600;
-      font-size: 16px;
+    .card-link::after {
+      content: "↗";
+      color: var(--dim);
+      font-size: 11px;
     }
 
-    .social-stats {
-      color: var(--accent);
-      font-size: 13px;
-      margin-top: 2px;
-    }
-
-    .external-icon {
-      color: var(--text-secondary);
-      font-size: 18px;
-    }
-
-    /* TikTok Post */
-    .tiktok-section {
-       background: var(--bg-default);
-  border-radius: 16px;
-  padding: 24px;
-  max-width: 800px; /* 👈 تحكم بالعرض */
-    width: 100%;
-  margin: 0 auto; 
-  margin-bottom: 32px;
-
-    }
-
-    .tiktok-header {
-      font-family: 'VT323', monospace;
-      font-size: 20x;
-      color: var(--accent);
-      margin-bottom: 20px;
-      letter-spacing: 1px;
-    }
-
-    .tiktok-embed-container {
-       background: var(--bg-secondary);
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 20px;
-   max-width: 100%;
-  display: flex;
-  justify-content: center;
-    }
-
-    .tiktok-embed-container blockquote {
-      margin: 0;
-    }
-
-    .tiktok-stats {
-      display: flex;
-      gap: 32px;
-      margin-bottom: 16px;
-    }
-
-    .tiktok-stat {
-      display: flex;
-      /* align-items: center;
-      gap: 8px; */
-       gap: 24px;
-      margin-bottom: 24px;
-    }
-
-    .heart-icon {
-      color: var(--tiktok-red);
-      font-size: 20px;
-      transition: transform 0.15s ease-out;
-      display: inline-block;
-    }
-
-    .tiktok-caption {
-      color: var(--text-secondary);
-      font-size: 14px;
-      /* margin-bottom: 20px; */
-        margin: 16px 0;
-
-    }
-
-    .tiktok-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--accent-secondary);
-      color: var(--bg-root);
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-      transition: opacity 0.2s;
-    }
-
-    .tiktok-button:hover {
-      opacity: 0.9;
-    }
-
-    /* Contact */
-    .contact-section {
-      text-align: center;
-      padding: 60px 20px;
-    }
-
-    .contact-title {
-      font-family: 'VT323', monospace;
-      font-size: 28px;
-      color: var(--accent-secondary);
-      letter-spacing: 2px;
-      margin-bottom: 16px;
-    }
-
-    .contact-text {
-      color: var(--text-secondary);
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      border-top: 1px solid var(--bg-secondary);
-      color: var(--text-secondary);
-      font-size: 14px;
-    }
-
-    /* Mobile Navigation */
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--text-primary);
-      font-size: 24px;
-      cursor: pointer;
-    }
-
-
-    @media (max-width: 768px) {
-  .pixel-font {
-    letter-spacing: 0.5px;
-  }
-
-  .hero h1 {
-    font-size: 30px;
-    line-height: 1.2;
-  }
-
-      .nav-links {
-        display: none;
-      }
-
-      .mobile-menu-btn {
-        display: block;
-      }
-     .hero {
-    padding-top: 100px;
-    padding-bottom: 48px;
-     }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .stats-container {
-        flex-direction: column;
-        gap: 24px;
-      }
-
-       .connect-layout {
-    grid-template-columns: 1fr;
-  }
-    .connect-layout {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  }
-
-  .tiktok-section {
-    max-width: 100%;
-    width: 100%;
-    margin: 0;
-    margin-bottom: 32px;
-
-  }
-
-
-
-  .social-card {
-    
-    width: 100%;
-    padding: 16px;
-  }
-}
-@media (min-width: 1024px) {
-  .social-cards {
-    grid-template-columns: repeat(4, 1fr) !important;
-  }
-}
-
-
-  /* .social-cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  } */
-    
-    .connect-layout {
+    .skills-cloud,
+    .achievement-grid {
       display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  align-items: start;
-    }
-
-.social-card {
-  background: var(--bg-default);
-  border: 1px solid var(--accent-secondary);
-  border-radius: 16px;
-  padding: 18px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  text-decoration: none;
-  color: inherit;
-  transition: background 0.2s, transform 0.2s;
-
-}
-
-    /* Soft Skills */
-    .soft-skills {
-      display: flex;
-      flex-wrap: wrap;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 12px;
-      margin-top: 32px;
     }
 
-    .soft-skill {
-      background: rgba(180, 167, 214, 0.15);
-      border: 1px solid var(--accent-secondary);
-      color: var(--accent-secondary);
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 14px;
+    .skill,
+    .achievement {
+      min-height: 110px;
+      border: 1px solid var(--line-soft);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.026);
+      padding: 20px;
+      display: flex;
+      align-items: end;
+      color: var(--white);
+      font-size: 18px;
+      letter-spacing: -0.035em;
+    }
+
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .stack-column {
+      min-height: 220px;
+      padding: 20px;
+      border-right: 1px solid var(--line-soft);
+    }
+
+    .stack-column:last-child {
+      border-right: 0;
+    }
+
+    .stack-column h3 {
       display: flex;
       align-items: center;
+      gap: 9px;
+      margin-bottom: 18px;
+      font-size: 13px;
+      color: var(--dim);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .stack-toggle {
+      display: none;
+    }
+
+    .stack-heading {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .stack-column ul {
+      list-style: none;
+      display: grid;
       gap: 8px;
-    }
-/* ===== Mobile Skills Optimization ===== */
-@media (max-width: 768px) {
-
-  /* نخفي أشرطة النسبة */
-  .skill-bar {
-    display: none;
-  }
-
-  /* نقلل حجم الكروت */
-  .skill-badge {
-    padding: 10px 12px;
-    min-width: unset;
-  }
-
-  /* نخلي المهارات أقرب لبعض */
-  .skills-grid {
-    gap: 8px;
-  }
-
-  /* نخفي الإحصائيات (مره تطوّل الصفحة) */
-  .stats-container {
-    display: none;
-  }
-}
-
-    /* Resume Section */
-    .resume-section {
-      background: var(--bg-default);
-      border-radius: 16px;
-      padding: 40px;
+      color: var(--muted);
+      font-size: 13px;
     }
 
-    .resume-header {
-      display: flex;
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .stack-icon,
+    .achievement-mark {
+      display: inline-grid;
+      width: 22px;
+      height: 22px;
+      place-items: center;
+      border: 1px solid var(--line-soft);
+      border-radius: 999px;
+      color: var(--white);
+      font-size: 12px;
+      opacity: 0.78;
+    }
+
+    .achievement {
       justify-content: space-between;
-      align-items: center;
-      margin-bottom: 32px;
-      flex-wrap: wrap;
       gap: 16px;
     }
 
-    .resume-intro {
-      color: var(--text-secondary);
-      font-family: 'VT323', monospace;
-      font-size: 18px;
-      letter-spacing: 1px;
+    .timeline-item {
+      min-height: 270px;
+      padding: 28px;
+      border-right: 1px solid var(--line-soft);
     }
 
-    .download-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--accent);
-      color: var(--bg-root);
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-      transition: opacity 0.2s, transform 0.2s;
+    .timeline-item:last-child {
+      border-right: 0;
     }
 
-    .download-btn:hover {
-      opacity: 0.9;
-      transform: translateY(-2px);
+    .timeline-item span {
+      color: var(--dim);
+      font-size: 12px;
     }
 
-    .resume-highlights {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 24px;
+    .timeline-item h3 {
+      margin: 34px 0 14px;
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -0.05em;
     }
 
-    .highlight-card {
-      background: var(--bg-secondary);
-      border-radius: 12px;
-      padding: 24px;
-      border-left: 4px solid var(--accent);
-    }
-
-    .highlight-card.secondary {
-      border-left-color: var(--accent-secondary);
-    }
-
-    .highlight-title {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .highlight-period {
-      color: var(--accent);
-      font-family: 'VT323', monospace;
-      font-size: 16px;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-    }
-
-    .highlight-card.secondary .highlight-period {
-      color: var(--accent-secondary);
-    }
-
-    .highlight-description {
-      color: var(--text-secondary);
+    .timeline-item p {
+      color: var(--muted);
       font-size: 14px;
       line-height: 1.6;
     }
 
-    .highlight-list {
-      list-style: none;
-      margin-top: 12px;
+    .philosophy {
+      min-height: 520px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(ellipse at 50% 20%, rgba(255,255,255,0.09), transparent 34%),
+        rgba(255,255,255,0.02);
+      padding: clamp(34px, 6vw, 82px);
     }
 
-    .highlight-list li {
-      color: var(--text-secondary);
-      font-size: 14px;
-      padding-left: 16px;
-      position: relative;
-      margin-bottom: 8px;
+    .philosophy p {
+      max-width: 860px;
+      font-size: clamp(36px, 5.8vw, 86px);
+      font-weight: 300;
+      letter-spacing: -0.08em;
+      line-height: 0.94;
     }
 
-    .highlight-list li::before {
-      content: ">";
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-family: 'VT323', monospace;
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.58fr) minmax(260px, 0.42fr);
+      gap: 16px;
+      align-items: stretch;
     }
 
-    .highlight-card.secondary .highlight-list li::before {
-      color: var(--accent-secondary);
+    .contact-panel,
+    .contact-links {
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.026);
+      padding: clamp(28px, 5vw, 58px);
     }
-    .contact-form {
-  max-width: 480px;
-  margin: 32px auto 0;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-/* Contact Form */
-.contact-form {
-  max-width: 500px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.contact-input,
-.contact-select,
-.contact-textarea {
-  background: var(--bg-secondary);
-  border: 1px solid var(--accent-secondary);
-  color: var(--text-primary);
-  padding: 14px 16px;
-  border-radius: 8px;
-  font-size: 14px;
-  outline: none;
-}
-
-.contact-input::placeholder,
-.contact-textarea::placeholder {
-  color: var(--text-secondary);
-}
-
-.contact-textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.contact-select {
-  appearance: none;
-  cursor: pointer;
-}
-
-.contact-button {
-  background: var(--accent-secondary);
-  color: var(--bg-root);
-  border: none;
-  padding: 14px;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: opacity 0.2s, transform 0.2s;
-}
-
-.contact-button:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-}
-
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0px); }
-}
-
-.avatar-container {
-  animation: float 4s ease-in-out infinite;
-}
-.hero h1:hover {
-  text-shadow: 
-    2px 0 var(--accent),
-    -2px 0 var(--accent-secondary);
-}
-.hero h1,
-.hero .subtitle,
-.tagline {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: reveal 0.8s ease forwards;
-}
-
-.hero .subtitle { animation-delay: 0.2s; }
-.tagline { animation-delay: 0.4s; }
-
-@keyframes reveal {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.backend-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 24px;
-}
-
-.backend-card {
-  background: var(--bg-default);
-  border: 1px solid var(--accent-secondary);
-  border-radius: 16px;
-  padding: 24px;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.backend-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(180, 167, 214, 0.15);
-}
-
-.backend-title {
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--accent);
-  margin-bottom: 12px;
-}
-
-.backend-description {
-  color: var(--text-secondary);
-  font-size: 14px;
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-
-.backend-features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 16px;
-}
-
-.backend-features span {
-  font-family: 'VT323', monospace;
-  font-size: 14px;
-  padding: 4px 10px;
-  border-radius: 12px;
-  background: rgba(180, 167, 214, 0.15);
-  color: var(--accent-secondary);
-}
-
-.backend-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 24px;
-}
-
-.backend-card {
-  background: var(--bg-default);
-  border: 1px solid var(--accent-secondary);
-  border-radius: 16px;
-  padding: 24px;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.backend-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(180, 167, 214, 0.15);
-}
-
-.backend-title {
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--accent);
-  margin-bottom: 12px;
-}
-
-.backend-description {
-  color: var(--text-secondary);
-  font-size: 14px;
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-
-.backend-features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 16px;
-}
-
-.backend-features span {
-  font-family: 'VT323', monospace;
-  font-size: 14px;
-  padding: 4px 10px;
-  border-radius: 12px;
-  background: rgba(180, 167, 214, 0.15);
-  color: var(--accent-secondary);
-}
-.portfolio-kicker {
-  color: var(--text-secondary);
-  margin: -22px 0 32px;
-  max-width: 720px;
-  font-size: 15px;
-}
-
-.projects-grid {
-  grid-template-columns: repeat(12, 1fr);
-  gap: 22px;
-}
-
-.project-card {
-  grid-column: span 4;
-  position: relative;
-  background:
-    linear-gradient(145deg, rgba(37, 43, 61, 0.88), rgba(10, 14, 20, 0.96)),
-    var(--bg-default);
-  border: 1px solid rgba(180, 167, 214, 0.18);
-  border-radius: 22px;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
-}
-
-.project-card.feature-project {
-  grid-column: span 6;
-  min-height: 560px;
-  border-color: rgba(180, 167, 214, 0.45);
-}
-
-.project-card.feature-project::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: 22px;
-  pointer-events: none;
-  background: linear-gradient(135deg, rgba(127, 217, 159, 0.28), transparent 38%, rgba(180, 167, 214, 0.24));
-  opacity: 0.65;
-}
-
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 32px 90px rgba(127, 217, 159, 0.12);
-}
-
-.project-thumbnail {
-  height: 260px;
-  background:
-    radial-gradient(circle at 25% 15%, rgba(180, 167, 214, 0.25), transparent 34%),
-    radial-gradient(circle at 82% 72%, rgba(127, 217, 159, 0.16), transparent 30%),
-    #080b11;
-  padding: 12px;
-}
-
-.project-card.feature-project .project-thumbnail {
-  height: 390px;
-}
-
-.project-thumbnail img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 0;
-  transition: transform 0.6s ease, filter 0.6s ease;
-}
-
-.project-thumbnail.poster-shot {
-  background:
-    radial-gradient(circle at 50% 42%, rgba(180, 167, 214, 0.22), transparent 42%),
-    linear-gradient(145deg, rgba(127, 217, 159, 0.08), rgba(180, 167, 214, 0.1)),
-    #05070c;
-}
-
-.project-thumbnail.poster-shot img {
-  max-width: 72%;
-  margin: 0 auto;
-  display: block;
-}
-
-.project-thumbnail.wide-shot img {
-  width: 100%;
-  height: 100%;
-}
-
-.project-card:hover .project-thumbnail img {
-  transform: none;
-  filter: saturate(1.1) contrast(1.04);
-}
-
-.project-content {
-  position: relative;
-  z-index: 1;
-  padding: 24px;
-}
-
-.project-title,
-.project-title.featured {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 22px;
-  color: var(--text-primary);
-  letter-spacing: -0.02em;
-}
-
-.project-card.feature-project .project-title {
-  font-size: 28px;
-}
-
-.project-description {
-  -webkit-line-clamp: 3;
-}
-
-.project-card.feature-project .project-description {
-  font-size: 15px;
-}
-
-.tech-badge {
-  background: rgba(127, 217, 159, 0.1);
-  border-color: rgba(127, 217, 159, 0.45);
-}
-
-.social-cards {
-  display: flex !important;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.social-card {
-  width: 60px !important;
-  height: 60px;
-  padding: 0 !important;
-  justify-content: center;
-  border-radius: 18px;
-  background: rgba(37, 43, 61, 0.72);
-  border-color: rgba(180, 167, 214, 0.28);
-}
-
-.social-card:hover {
-  transform: translateY(-5px);
-  background: rgba(180, 167, 214, 0.16);
-}
-
-.social-card .social-info,
-.social-card .external-icon {
-  display: none;
-}
-
-.social-card .social-icon {
-  width: auto;
-  height: auto;
-  background: transparent;
-}
-
-.social-card .social-icon svg {
-  width: 28px;
-  height: 28px;
-}
-
-.language-toggle {
-  border: 1px solid rgba(127, 217, 159, 0.45);
-  background: rgba(127, 217, 159, 0.08);
-  color: var(--accent);
-  border-radius: 999px;
-  padding: 8px 14px;
-  font-family: 'VT323', monospace;
-  font-size: 18px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.language-toggle:hover {
-  transform: translateY(-2px);
-  background: rgba(127, 217, 159, 0.16);
-}
-
-body[dir="rtl"] {
-  direction: rtl;
-}
-
-body[dir="rtl"] .nav-content,
-body[dir="rtl"] .section-header,
-body[dir="rtl"] .category-header,
-body[dir="rtl"] .resume-header {
-  direction: rtl;
-}
-
-body[dir="rtl"] .project-content,
-body[dir="rtl"] .portfolio-kicker,
-body[dir="rtl"] .backend-description,
-body[dir="rtl"] .highlight-description,
-body[dir="rtl"] .contact-text,
-body[dir="rtl"] .contact-form {
-  text-align: right;
-}
-
-body[dir="rtl"] .highlight-list li {
-  padding-left: 0;
-  padding-right: 16px;
-}
-
-body[dir="rtl"] .highlight-list li::before {
-  left: auto;
-  right: 0;
-}
-
-@media (max-width: 960px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card,
-  .project-card.feature-project {
-    grid-column: span 1;
-    min-height: auto;
-  }
-}
-
-@media (max-width: 640px) {
-  .project-card.feature-project .project-thumbnail,
-  .project-thumbnail {
-    height: 280px;
-  }
-
-  .project-thumbnail.poster-shot img {
-    max-width: 82%;
-  }
-
-  .project-content {
-    padding: 20px;
-  }
-
-  .social-card {
-    width: 54px !important;
-    height: 54px;
-  }
-}
-
-.terminal-text {
-  font-family: 'VT323', monospace;
-  font-size: 20px;
-  color: var(--accent);
-  margin-bottom: 24px;
-}
-
-.cursor {
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  0%, 50%, 100% { opacity: 1; }
-  25%, 75% { opacity: 0; }
-}
-.alt-form .field {
-  margin-bottom: 24px;
-}
-
-.alt-form label {
-  font-family: 'VT323', monospace;
-  color: var(--accent-secondary);
-  font-size: 16px;
-  display: block;
-  margin-bottom: 6px;
-}
-
-.alt-form input,
-.alt-form textarea,
-.alt-form select {
-  width: 100%;
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid var(--accent-secondary);
-  padding: 8px 0;
-  color: var(--text-primary);
-  font-size: 15px;
-  outline: none;
-}
-
-.alt-form input:focus,
-.alt-form textarea:focus,
-.alt-form select:focus {
-  border-color: var(--accent);
-}
 
-
+    .contact-panel h2 {
+      max-width: 680px;
+      font-size: clamp(52px, 7.5vw, 120px);
+      font-weight: 300;
+      letter-spacing: -0.09em;
+      line-height: 0.88;
+    }
+
+    .contact-panel p {
+      max-width: 430px;
+      margin-top: 28px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .contact-links {
+      display: grid;
+      align-content: end;
+      gap: 10px;
+    }
+
+    .contact-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 56px;
+      border-bottom: 1px solid var(--line-soft);
+      color: var(--white);
+      font-size: 15px;
+    }
+
+    .contact-link span {
+      color: var(--dim);
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 28px clamp(24px, 4vw, 54px) 40px;
+      color: var(--dim);
+      font-size: 12px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      filter: blur(10px);
+      transition: opacity 0.9s ease, transform 0.9s ease, filter 0.9s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    .hero .reveal {
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+
+    [dir="rtl"] body {
+      text-align: right;
+    }
+
+    [dir="rtl"] h1,
+    [dir="rtl"] .section-title,
+    [dir="rtl"] .project-brief h3,
+    [dir="rtl"] .timeline-item h3,
+    [dir="rtl"] .philosophy p,
+    [dir="rtl"] .contact-panel h2 {
+      letter-spacing: -0.025em;
+      line-height: 1.12;
+    }
+
+    [dir="rtl"] .eyebrow,
+    [dir="rtl"] .project-kicker,
+    [dir="rtl"] .stack-column h3,
+    [dir="rtl"] .stack-toggle,
+    [dir="rtl"] .tag {
+      letter-spacing: 0;
+    }
+
+    [dir="rtl"] .hero-copy,
+    [dir="rtl"] .section-copy,
+    [dir="rtl"] .project-brief p,
+    [dir="rtl"] .timeline-item p,
+    [dir="rtl"] .contact-panel p {
+      line-height: 1.9;
+    }
+
+    [dir="rtl"] .site-nav,
+    [dir="rtl"] .hero-actions,
+    [dir="rtl"] footer {
+      flex-direction: row-reverse;
+    }
+
+    [dir="rtl"] .contact-link {
+      flex-direction: row;
+      gap: 18px;
+    }
+
+    [dir="rtl"] .contact-link span {
+      text-align: left;
+      unicode-bidi: plaintext;
+    }
+
+    [dir="rtl"] .stack-column,
+    [dir="rtl"] .timeline-item {
+      border-right: 0;
+      border-left: 1px solid var(--line-soft);
+    }
+
+    [dir="rtl"] .pill-card {
+      align-items: flex-end;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .section-head,
+      .feature-project,
+      .feature-project.reverse,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-grid,
+      .skills-cloud,
+      .achievement-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .stack-grid,
+      .timeline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .stack-column,
+      .timeline-item {
+        border-bottom: 1px solid var(--line-soft);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .page-shell {
+        width: calc(100% - 22px);
+        margin: 11px auto;
+        border-radius: 28px;
+      }
+
+      .site-nav {
+        align-items: flex-start;
+        min-height: auto;
+        padding: 18px;
+      }
+
+      .nav-links {
+        max-width: 230px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 12px 18px;
+      }
+
+      section {
+        padding: 54px 20px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 44px;
+      }
+
+      .hero-meta,
+      .about-grid,
+      .project-grid,
+      .skills-cloud,
+      .achievement-grid,
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .stack-grid {
+        display: block;
+      }
+
+      .stack-column {
+        min-height: auto;
+        padding: 0;
+        border-right: 0;
+        border-bottom: 1px solid var(--line-soft);
+      }
+
+      .stack-column:last-child {
+        border-bottom: 0;
+      }
+
+      .stack-column h3 {
+        margin: 0;
+      }
+
+      .stack-toggle {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 18px;
+        border: 0;
+        background: transparent;
+        color: var(--dim);
+        cursor: pointer;
+        text-align: inherit;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 12px;
+      }
+
+      .stack-toggle > span {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+      }
+
+      .stack-heading {
+        display: none;
+      }
+
+      .stack-toggle::after {
+        content: "+";
+        color: var(--white);
+        font-size: 16px;
+      }
+
+      .stack-column.is-open .stack-toggle::after {
+        content: "−";
+      }
+
+      .stack-column ul {
+        display: none;
+        padding: 0 18px 20px 49px;
+      }
+
+      .stack-column.is-open ul {
+        display: grid;
+      }
+
+      [dir="rtl"] .stack-column ul {
+        padding: 0 49px 20px 18px;
+      }
+
+      .pill-card,
+      .pill-card:nth-child(1),
+      .pill-card:nth-child(4) {
+        grid-column: span 1;
+      }
+
+      .feature-project {
+        min-height: auto;
+      }
+
+      .project-media {
+        min-height: 420px;
+      }
+
+      footer {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
-
 <body>
-  <!-- Navigation -->
-  <nav>
-    <div class="nav-content">
-      <div class="logo">
-        <img src="/assets/images/logo.png" alt="Logo">
-        <span class="logo-text">&lt;SajaPortfolio /&gt;</span>
+  <div class="page-shell">
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="#home" class="brand" aria-label="Saja Alhomrany home">
+        <img src="/assets/images/logo.png" alt="" />
+        <span data-i18n="brand">SAJA</span>
+      </a>
+      <div class="nav-links">
+        <a href="#projects" data-i18n="navProjects">Projects</a>
+        <a href="#tech-stack" data-i18n="navSkills">Tech</a>
+        <a href="#experience" data-i18n="navExperience">Experience</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
       </div>
-      <ul class="nav-links">
-        <li><a href="#portfolio">Portfolio</a></li>
-        <!-- <li><a href="#skills">Skills</a></li> -->
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#connect">Connect</a></li>
-      </ul>
-      <button class="language-toggle" type="button" aria-label="Switch language">العربية</button>
-      <button class="mobile-menu-btn">&#9776;</button>
-    </div>
-  </nav>
+      <button class="lang-toggle" type="button" data-i18n="langButton">العربية</button>
+    </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <div class="avatar-container">
-        <img src="/assets/images/logo.png" alt="Avatar">
-      </div>
-    <h1 class="pixel-font">
-     I build <span id="typed"></span><span class="cursor">|</span>
-     </h1>
-
-<div class="tagline">// Turning ideas into real, production-ready solutions</div>
-
-    </div>
-  </section>
-
-  <!-- Portfolio Section -->
-
-
-<section class="section" id="portfolio">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Projects</h2>
-      <div class="section-line"></div>
-    </div>
-
-    <p class="portfolio-kicker">
-      Selected product work across iOS, UI/UX, backend integration, and polished launch-ready experiences.
-    </p>
-
-    <div class="projects-grid">
-<!-- Sensic -->
-<div class="project-card feature-project">
-  <div class="project-thumbnail poster-shot">
-     <img src="/assets/images/sensic.png" alt="Sensic music haptics app">
-  </div>
-  <div class="project-content">
-    <h3 class="project-title">Sensic</h3>
-    <p class="project-description">
-      A sensory music experience that turns sound into touch through custom haptic controls. The app includes
-      recording flows, practice mode, haptic intensity and sharpness tuning, and a polished iOS interface built
-      around accessibility, rhythm, and emotional interaction.
-    </p>
-    <button class="read-more-btn">Read more</button>
-    <br>
-    <div class="tech-stack">
-      <span class="tech-badge">iOS</span>
-      <span class="tech-badge">SwiftUI</span>
-      <span class="tech-badge">Haptics</span>
-      <span class="tech-badge">UX Design</span>
-      <span class="tech-badge">App Store</span>
-    </div>
-  </div>
-</div>
-
-<!-- Orbit Goals -->
-<div class="project-card feature-project">
-  <div class="project-thumbnail wide-shot">
-     <img src="/assets/images/orbit.png" alt="Orbit goal tracking app onboarding">
-  </div>
-  <div class="project-content">
-    <h3 class="project-title">Orbit Goals</h3>
-    <p class="project-description">
-      A goal-tracking product concept built around momentum, friendly rivalry, and visual progress. The onboarding
-      system introduces goal shapes, motion-based milestones, and a clear task orbit that helps users turn ambitions
-      into small, repeatable actions.
-    </p>
-    <button class="read-more-btn">Read more</button>
-    <br>
-    <div class="tech-stack">
-      <span class="tech-badge">Product Design</span>
-      <span class="tech-badge">SwiftUI</span>
-      <span class="tech-badge">Onboarding</span>
-      <span class="tech-badge">Gamification</span>
-      <span class="tech-badge">Motion UI</span>
-    </div>
-  </div>
-</div>
-
-<!-- Abjad Kindergarten -->
-<div class="project-card">
-  <div class="project-thumbnail">
-     <img src="/assets/images/abjd.png" alt="Abjad Kindergarten">
-  </div>
-  <div class="project-content">
-    <h3 class="project-title">Abjad Kindergarten</h3>
-    <p class="project-description">
-      A clean and engaging website for Abjad Kindergarten designed to provide parents with easy access to key information 
-      and contact details. The site emphasizes clarity, trust, and a smooth user experience. Built using React with a 
-      focus on structure, flow, and usability to make navigation simple and communication effortless.
-    </p>
-    <button class="read-more-btn">Read more</button>
-    <br>
-    <div class="tech-stack">
-      <span class="tech-badge">React</span>
-      <span class="tech-badge">JavaScript</span>
-      <span class="tech-badge">UI/UX</span>
-      <span class="tech-badge">Responsive Design</span>
-    </div>
-  </div>
-</div>
-      <!-- Movie App -->
-      <div class="project-card">
-        <div class="project-thumbnail">
-          <img src="/assets/images/movie.png" alt="Movie App">
-        </div>
-        <div class="project-content">
-          <h3 class="project-title featured">Movie App</h3>
-          <p class="project-description">
-            An iOS app built with SwiftUI using real backend APIs. I implemented the full UI from Figma designs, 
-            integrated multiple endpoints (movies, actors, directors, reviews),
-             handled relational data, and built stable loading/error states.
-          </p>
-          <button class="read-more-btn">Read more</button>
-
-          <div class="tech-stack">
-            <span class="tech-badge">SwiftUI</span>
-            <span class="tech-badge">REST APIs</span>
-            <span class="tech-badge">JSON</span>
-            <span class="tech-badge">MVVM</span>
-            <span class="tech-badge">Postman</span>
+    <main id="home">
+      <section class="hero">
+        <div class="hero-grid reveal">
+          <div>
+            <p class="eyebrow" data-i18n="heroEyebrow">Digital Product Engineer Showcase</p>
+            <h1 data-i18n="heroTitle">SAJA ALHOMRANY</h1>
           </div>
-        </div>
-      </div>
-
-
-<!-- Wathiqni -->
-<div class="project-card">
-  <div class="project-thumbnail">
-     <img src="/assets/images/Wathiqn.png" alt="Wathiqni">
-  </div>
-  <div class="project-content">
-    <h3 class="project-title">Wathiqni</h3>
-    <p class="project-description">
-      A privacy-first verification platform designed to reduce fraud and unnecessary data sharing.
-       It enables secure identity confirmation between individuals and companies, as well as
-        peer-to-peer verification without exposing sensitive personal information.
-    </p>
-    <button class="read-more-btn">Read more</button>
-
-    <div class="tech-stack">
-      <span class="tech-badge">iOS App</span>
-      <span class="tech-badge">Web Platform</span>
-      <span class="tech-badge">UX/UI</span>
-      <span class="tech-badge">MVP</span>
-      <span class="tech-badge">Hackathon</span>
-    </div>
-  </div>
-</div>
-
-      <!-- Glutinc -->
-      <div class="project-card">
-        <div class="project-thumbnail">
-           <img src="/assets/images/Glutinc.jpeg" alt="Glutinc">
-
-        </div>
-        <div class="project-content">
-          <h3 class="project-title">Glutinc</h3>
-          <p class="project-description">
-           A community-driven iOS application designed for people with gluten sensitivity. 
-           The app allows users to scan food products, view ingredient details, and check gluten safety in 
-           real time. Users can also share personal experiences, rate products, and explore community-recommended 
-           gluten-free options. Built using SwiftUI with a clean MVVM architecture, CloudKit for backend storage, 
-           and deployed on TestFlight for real-user testing and feedback.
-          </p>
-          <button class="read-more-btn">Read more</button>
-<br>
-          <div class="tech-stack">
-            <span class="tech-badge">SwiftUI</span>
-            <span class="tech-badge">CloudKit</span>
-            <span class="tech-badge">MVVM</span>
-            <span class="tech-badge">TestFlight</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Learning Journey -->
-      <div class="project-card">
-        <div class="project-thumbnail">
-            <img src="/assets/images/Lj.png" alt="Learning Journey">
-
-        </div>
-        <div class="project-content">
-          <h3 class="project-title">Learning Journey</h3>
-          <p class="project-description">
-           A habit-based iOS learning tracker that focuses on building consistency through streaks
-            and visual progress indicators. The app includes dynamic success and failure states that respond to
-             user actions in real time, helping users stay motivated. It is built with SwiftUI and follows the 
-             MVVM architecture, using a structured data-driven UI to ensure scalability, clean state management, 
-             and smooth user interactions.
-          </p>
-          <button class="read-more-btn">Read more</button>
-<br>
-          <div class="tech-stack">
-            <span class="tech-badge">SwiftUI</span>
-            <span class="tech-badge">MVVM</span>
-            <span class="tech-badge">Data Modeling</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Colora -->
-      <div class="project-card">
-        <div class="project-thumbnail">
-            <img src="/assets/images/clora.png" alt="Colora">
-
-        </div>
-        <div class="project-content">
-          <h3 class="project-title">Colora</h3>
-          <p class="project-description">
-         A creative self-reflection iOS app that merges guided drawing, emotional prompts, and journaling into a
-          single interactive experience. Users can express emotions through a dynamic canvas, track their progress using 
-          a custom calendar, and maintain habits with a streak-based system. The app is designed to deliver a personalized
-           flow, adapting content and UI states based on user activity, with a strong emphasis on clean structure and scalability.
-          </p>
-          <button class="read-more-btn">Read more</button>
-<br>
-          <div class="tech-stack">
-            <span class="tech-badge">Swift</span>
-            <span class="tech-badge">SwiftUI</span>
-            <span class="tech-badge">UIKit</span>
-            <span class="tech-badge">Accessibility</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Flavor Vista AI -->
-      <div class="project-card">
-        <div class="project-thumbnail">
-            <img src="/assets/images/Vist.png" alt="Flavor Vista AI">
-        </div>
-        <div class="project-content">
-          <h3 class="project-title">Flavor Vista AI</h3>
-          <p class="project-description">
-        A full UI/UX overhaul of an AI-powered platform aimed at simplifying complex workflows and enhancing the 
-        overall user experience. I redesigned the interface from the ground up using Figma, redefined navigation patterns,
-         and optimized user flows for clarity and efficiency. The project followed Agile methodologies, with active 
-         collaboration, sprint planning, and task tracking through Jira.
-          </p>
-          <button class="read-more-btn">Read more</button>
-<br>
-          <div class="tech-stack">
-            <span class="tech-badge">Figma</span>
-            <span class="tech-badge">UI/UX</span>
-            <span class="tech-badge">Agile</span>
-            <span class="tech-badge">Jira</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Jareeb -->
-      <div class="project-card">
-        <div class="project-thumbnail">
-            <img src="/assets/images/jareeb.jpeg" alt="Jareeb">
-
-         </div>
-        <div class="project-content">
-          <h3 class="project-title">Jareeb</h3>
-          <p class="project-description">
-    A time-aware recommendation app that suggests activities and places based on how much free time the user has.
-     The app emphasizes clean navigation, clear decision-making flows, and accessibility-focused UI patterns. Built as 
-     part of the Apple Foundation Program, with a strong emphasis on usability, interaction design, and user-centered problem solving.
-          </p>
-          <button class="read-more-btn">Read more</button>
-<br>
-          <div class="tech-stack">
-            <span class="tech-badge">SwiftUI</span>
-            <span class="tech-badge">UI/UX</span>
-            <span class="tech-badge">Prototyping</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- VERGE -->
-      <div class="project-card">
-  <div class="project-thumbnail">
-    <img src="/assets/images/verge.jpeg" alt="VERGE">
-  </div>
-  <div class="project-content">
-    <h3 class="project-title">VERGE</h3>
-    <p class="project-description">
-A conceptual fashion UI/UX project that blends cultural identities into a cohesive digital experience. 
-The design emphasizes meaning-driven interactions, visual storytelling, and a modern aesthetic that reflects 
-authenticity and diversity. The project focuses on how design can communicate values, connect communities, 
-and create emotional resonance.
-    </p>
-    <button class="read-more-btn">Read more</button>
-<br>
-    <div class="tech-stack">
-      <span class="tech-badge">UI/UX</span>
-      <span class="tech-badge">Figma</span>
-      <span class="tech-badge">Branding</span>
-      <span class="tech-badge">Concept Design</span>
-    </div>
-  </div>
-</div>
-
-
-    </div>
-  </div>
-</section>
-
- <section class="section" id="backend">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Backend Projects</h2>
-      <div class="section-line"></div>
-    </div>
-
-    <p style="color: var(--text-secondary); margin-bottom: 32px; font-family: 'VT323', monospace; font-size: 18px; letter-spacing: 1px;">
-      // Server-side systems, APIs & logic
-    </p>
-
-    <div class="backend-grid">
-
-      <!-- Backend Project 1 -->
-      <div class="backend-card">
-        <h3 class="backend-title">Speech Analysis API</h3>
-        <p class="project-description">
-          A backend service that analyzes speech-to-text input and evaluates vocal delivery, pace,
-          filler words, and content structure. Designed to support real-time feedback for presentation
-          and communication training.
-        </p>
-            <button class="read-more-btn">Read more</button>
-<br>
-
-        <div class="backend-features">
-          <span>REST API</span>
-          <span>Speech-to-Text</span>
-          <span>AI Scoring Logic</span>
-        </div>
-
-        <div class="tech-stack">
-          <span class="tech-badge">Node.js</span>
-          <span class="tech-badge">Express</span>
-          <span class="tech-badge">AI Logic</span>
-          <span class="tech-badge">JSON</span>
-        </div>
-      </div>
-
-       <!-- Movie Data System -->
-      <div class="backend-card">
-        <h3 class="backend-title">Movie Data Management System</h3>
-        <p class="project-description">
-          A data-driven system built around RESTful APIs to manage movies,
-          actors, directors, and reviews. The project focuses on consuming
-          CRUD endpoints, modeling relational data, handling asynchronous
-          requests, and managing error and loading states reliably.
-        </p>
-            <button class="read-more-btn">Read more</button>
-<br>
-
-        <div class="backend-features">
-          <span>CRUD Operations</span>
-          <span>REST APIs</span>
-          <span>Relational Data</span>
-        </div>
-
-        <div class="tech-stack">
-          <span class="tech-badge">REST APIs</span>
-          <span class="tech-badge">JSON</span>
-          <span class="tech-badge">Postman</span>
-          <span class="tech-badge">Data Modeling</span>
-        </div>
-      </div>
-
-      <!-- Backend Project 3 -->
-      <div class="backend-card">
-        <h3 class="backend-title">CloudKit Data Layer</h3>
-        <p class="project-description">
-          A structured CloudKit backend layer handling public and private databases,
-          user authentication, relational records, and data syncing across devices.
-        </p>
-            <button class="read-more-btn">Read more</button>
-<br>
-
-        <div class="backend-features">
-          <span>Public & Private DB</span>
-          <span>Sync Logic</span>
-          <span>Access Control</span>
-        </div>
-
-        <div class="tech-stack">
-          <span class="tech-badge">CloudKit</span>
-          <span class="tech-badge">iCloud</span>
-          <span class="tech-badge">Data Modeling</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- 
- Skills Section -->
-<!-- <section class="section" id="skills">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Skills</h2>
-      <div class="section-line"></div>
-    </div>
-
-    <p style="color: var(--text-secondary); margin-bottom: 32px; font-family: 'VT323', monospace; font-size: 18px; letter-spacing: 1px;">
-      // Tools & technologies I use to build clean and scalable iOS apps
-    </p>
-
-    <div class="skills-section"> -->
-
-      <!-- Languages -->
-      <!-- <div class="skills-category">
-        <div class="category-header">
-          <h3 class="category-title">Languages</h3>
-          <div class="category-line"></div>
-        </div>
-        <div class="skills-grid">
-          <div class="skill-badge">
-            <span class="skill-name">Swift</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 95%"></div></div>
-          </div>
-          <div class="skill-badge">
-            <span class="skill-name">Java</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 70%"></div></div>
-          </div>
-          <div class="skill-badge secondary">
-            <span class="skill-name">JavaScript</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 65%"></div></div>
-          </div>
-          <div class="skill-badge secondary">
-            <span class="skill-name">PHP</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 60%"></div></div>
-          </div>
-          <div class="skill-badge secondary">
-            <span class="skill-name">HTML & CSS</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 75%"></div></div>
-          </div>
-        </div>
-      </div> -->
-
-      <!-- Frameworks -->
-      <!-- <div class="skills-category">
-        <div class="category-header">
-          <h3 class="category-title">Frameworks & Platforms</h3>
-          <div class="category-line"></div>
-        </div>
-        <div class="skills-grid">
-          <div class="skill-badge">
-            <span class="skill-name">SwiftUI</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 95%"></div></div>
-          </div>
-          <div class="skill-badge">
-            <span class="skill-name">UIKit</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
-          </div>
-          <div class="skill-badge secondary">
-            <span class="skill-name">Firebase</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 75%"></div></div>
-          </div>
-          <div class="skill-badge secondary">
-            <span class="skill-name">CloudKit</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 70%"></div></div>
-          </div>
-        </div>
-      </div> -->
-
-      <!-- Tools -->
-      <!-- <div class="skills-category">
-        <div class="category-header">
-          <h3 class="category-title">Tools</h3>
-          <div class="category-line"></div>
-        </div>
-        <div class="skills-grid">
-          <div class="skill-badge">
-            <span class="skill-name">Xcode</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 95%"></div></div>
-          </div>
-          <div class="skill-badge">
-            <span class="skill-name">GitHub</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 90%"></div></div>
-          </div>
-          <div class="skill-badge secondary">
-            <span class="skill-name">Figma</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
-          </div>
-          <div class="skill-badge secondary">
-            <span class="skill-name">TestFlight</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
-          </div>
-          <div class="skill-badge secondary">
-            <span class="skill-name">Azure AI Studio</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 60%"></div></div>
-          </div>
-        </div>
-      </div> -->
-
-      <!-- Soft Skills -->
-      <!-- <div class="soft-skills">
-        <span class="soft-skill">✓ Problem Solving</span>
-        <span class="soft-skill">✓ Fast Learner</span>
-        <span class="soft-skill">✓ Time Management</span>
-        <span class="soft-skill">✓ Team Collaboration</span>
-        <span class="soft-skill">✓ Logical Thinking</span>
-        <span class="soft-skill">✓ UI/UX Thinking</span>
-      </div> -->
-
-      <!-- Stats -->
-      <!-- <div class="stats-container">
-        <div class="stat-item">
-          <div class="stat-value">2+</div>
-          <div class="stat-label">Years in iOS</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value secondary">10+</div>
-          <div class="stat-label">Apps & Prototypes</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value">100%</div>
-          <div class="stat-label">Passion</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>  -->
-
-
-
-  <section class="section" id="resume">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Resume</h2>
-      <div class="section-line"></div>
-    </div>
-
-    
-<div class="resume-section">
-  <div class="resume-header">
-    <p class="resume-intro">// My professional journey & experience</p>
-    <a href="/assets/saja_resum.pdf"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="download-btn">
-       View Resume (PDF)
-    </a>
-  </div>
-
-
-      <div class="resume-highlights">
-
-        <!-- Apple Developer Academy -->
-    <div class="highlight-card">
-  <h4 class="highlight-title">iOS Developer (Part-time)</h4>
-  <p class="highlight-period">Aug 2024 – Present // Apple Developer Academy, Riyadh</p>
-
-  <div class="resume-more">
-    <p class="highlight-description">
-      Working in multidisciplinary teams to design and prototype innovative iOS applications using Swift and Xcode.
-    </p>
-
-    <ul class="highlight-list">
-      <li>Developed iOS apps using Swift & SwiftUI</li>
-      <li>Participated in Agile sprints and daily standups</li>
-      <li>Contributed to code reviews and UI/UX decisions</li>
-      <li>Built interactive prototypes and MVPs</li>
-    </ul>
-  </div>
-
-  <button class="resume-toggle-btn">Show more</button>
-</div>
-
-        <!-- Macromin -->
-        <div class="highlight-card secondary">
-          <h4 class="highlight-title">iOS Developer Intern</h4>
-          <p class="highlight-period">May 2025 – Apr 2025 // Macromin Solution (Remote)</p>
-          <div class="resume-more">
-        
-          <p class="highlight-description">
-            Developed and tested app features in an Agile environment, collaborating remotely with cross-functional teams.
-          </p>
-<br>
-          <ul class="highlight-list">
-            <li>Implemented SwiftUI views and logic</li>
-            <li>Used GitHub for version control & collaboration</li>
-            <li>Participated in UI/UX discussions using Figma</li>
-            <li>Followed Apple Human Interface Guidelines</li>
-          </ul>
+          <div>
+            <p class="hero-copy" data-i18n="heroCopy">Software engineer building products that solve real-world problems across mobile apps, web platforms, backend systems, and AI-assisted workflows.</p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#projects" data-i18n="explore">Explore Projects</a>
+              <a class="btn" href="#contact" data-i18n="contact">Contact</a>
             </div>
-  <button class="resume-toggle-btn">Show more</button>
-
-        </div>
-
-        <!-- Apple Foundation Program -->
-        <div class="highlight-card">
-          <h4 class="highlight-title">iOS Developer Intern</h4>
-          <p class="highlight-period">Nov 2024 – Dec 2024 // Apple Foundation Program, Riyadh</p>
-          <div class="resume-more">
-          <p class="highlight-description">
-            Built an iOS prototype with scalable architecture and responsive UI layouts.
-          </p>
-<br>
-          <ul class="highlight-list">
-            <li>Developed core features using SwiftUI</li>
-            <li>Implemented tab navigation & data handling</li>
-            <li>Debugged and optimized app performance</li>
-            <li>Worked in team-based workshops</li>
-          </ul>
-            </div>
-              <button class="resume-toggle-btn">Show more</button>
-        </div>
-
-        <!-- IT Specialist -->
-        <div class="highlight-card secondary">
-          <h4 class="highlight-title">IT Specialist</h4>
-          <p class="highlight-period">Aug 2023 – Jun 2024 // Ali Al Sunaidi Foundation, Jeddah</p>
-            <div class="resume-more">
-          <p class="highlight-description">
-            Maintained IT systems and infrastructure while improving reliability and uptime.
-          </p>
-<br>
-          <ul class="highlight-list">
-            <li>Increased system uptime to 99.9%</li>
-            <li>Installed and configured routers & switches</li>
-            <li>Resolved recurring system issues</li>
-            <li>Integrated software solutions</li>
-          </ul>
           </div>
-              <button class="resume-toggle-btn">Show more</button>
         </div>
 
-        <!-- Education -->
-        <div class="highlight-card">
-          <h4 class="highlight-title">Bachelor of Computer Science (IT)</h4>
-          <p class="highlight-period">2019 – 2023 // Al-Baha University</p>
-            <div class="resume-more">
+        <div class="hero-meta reveal">
+          <article class="meta-card">
+            <span>01</span>
+            <strong data-i18n="metaOne">Apple Developer Academy Graduate</strong>
+          </article>
+          <article class="meta-card">
+            <span>02</span>
+            <strong data-i18n="metaTwo">Freelance Software Engineer</strong>
+          </article>
+          <article class="meta-card">
+            <span>03</span>
+            <strong data-i18n="metaThree">AI Powered Product Builder</strong>
+          </article>
+        </div>
+      </section>
 
-          <p class="highlight-description">
-            Specialized in Information Technology with focus on software development.
-          </p>
-<br>
-          <ul class="highlight-list">
-            <li>Studied software engineering principles</li>
-            <li>Built multiple academic projects</li>
-            <li>Learned web & mobile technologies</li>
-          </ul>
+      <section id="about">
+        <div class="section-head reveal">
+          <h2 class="section-title" data-i18n="aboutTitle">Product-minded engineering.</h2>
+          <p class="section-copy" data-i18n="aboutCopy">I design and build practical digital products with a focus on clarity, accessibility, clean systems, and usable interfaces.</p>
+        </div>
+        <div class="about-grid reveal">
+          <div class="pill-card"><span class="pill-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="m12.5 10-6 6 6 6"/><path d="m19.5 10 6 6-6 6"/><path d="m17.5 8-3 16"/></svg></span><span class="pill-label" data-i18n="aboutOne">Software Engineer</span></div>
+          <div class="pill-card"><span class="pill-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="9" y="6" width="14" height="20" rx="4"/><path d="M13 10h6"/><path d="M14 22h4"/></svg></span><span class="pill-label" data-i18n="aboutTwo">Web & Mobile Builder</span></div>
+          <div class="pill-card"><span class="pill-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="8.5" cy="16" r="2.5"/><circle cx="23.5" cy="10" r="2.5"/><circle cx="23.5" cy="22" r="2.5"/><path d="M11 15 21 11"/><path d="m11 17 10 4"/></svg></span><span class="pill-label" data-i18n="aboutThree">Backend Systems</span></div>
+          <div class="pill-card"><span class="pill-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M9 22 16 8l7 14"/><path d="M12 17h8"/><path d="m23 7 1.5 3L28 11.5 24.5 13 23 16l-1.5-3L18 11.5 21.5 10z"/></svg></span><span class="pill-label" data-i18n="aboutFour">AI Assisted Development</span></div>
+          <div class="pill-card"><span class="pill-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="6" y="8" width="20" height="14" rx="4"/><path d="M11 13h7"/><path d="M11 17h10"/><path d="m14 26 3-4 3 4"/></svg></span><span class="pill-label" data-i18n="aboutFive">Product Builder</span></div>
+          <div class="pill-card"><span class="pill-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M24 14c0 6-8 12-8 12S8 20 8 14a8 8 0 0 1 16 0z"/><circle cx="16" cy="14" r="2.5"/></svg></span><span class="pill-label" data-i18n="aboutSix">Saudi Arabia</span></div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="section-head reveal">
+          <h2 class="section-title" data-i18n="projectsTitle">Featured product work.</h2>
+          <p class="section-copy" data-i18n="projectsCopy">Two focused product stories across goal tracking, sensory interaction, interface design, and real product execution.</p>
+        </div>
+
+        <div class="featured-stack">
+          <article class="feature-project reveal" data-case-study-url="https://www.behance.net/portfolio/editor?project_id=251830661" style="--image-glow: radial-gradient(circle at 46% 42%, rgba(96, 76, 156, 0.26), transparent 42%);">
+            <div class="project-brief">
+              <div>
+                <p class="project-kicker">Music Through Haptics</p>
+                <h3><a class="project-title-link" href="https://www.behance.net/portfolio/editor?project_id=251830661" target="_blank" rel="noopener noreferrer">Sensic</a></h3>
+                <div class="project-actions">
+                  <a class="project-action store" href="https://apps.apple.com/sa/app/sensic/id6776334462" target="_blank" rel="noopener noreferrer" data-i18n="sensicAppStore">Available on App Store</a>
+                  <a class="project-action" href="https://www.behance.net/portfolio/editor?project_id=251830661" target="_blank" rel="noopener noreferrer" data-i18n="sensicCaseStudy">View Case Study</a>
+                </div>
+              </div>
+              <p data-i18n="sensicDesc">A sensory music experience that turns sound into touch through custom haptic controls, practice mode, recordings, and accessibility-focused interaction.</p>
+              <div class="tags">
+                <span class="tag">Mobile App</span>
+                <span class="tag">SwiftUI</span>
+                <span class="tag">Haptics</span>
+                <span class="tag">Accessibility</span>
+              </div>
             </div>
-              <button class="resume-toggle-btn">Show more</button>
+            <div class="project-media wide sensic-showcase">
+              <img src="/assets/images/sensic-showcase-angle.png" alt="Sensic app screens" />
+            </div>
+          </article>
+
+          <article class="feature-project reveal" data-case-study-url="https://www.behance.net/gallery/251839777/ORBit" style="--image-glow: radial-gradient(circle at 50% 38%, rgba(116, 106, 167, 0.24), transparent 42%);">
+            <div class="project-brief">
+              <div>
+                <p class="project-kicker">Goal Tracking Platform</p>
+                <h3><a class="project-title-link" href="https://www.behance.net/gallery/251839777/ORBit" target="_blank" rel="noopener noreferrer">Orbit</a></h3>
+                <div class="project-actions">
+                  <a class="project-action" href="https://www.behance.net/gallery/251839777/ORBit" target="_blank" rel="noopener noreferrer" data-i18n="projectCaseStudy">Case Study</a>
+                </div>
+              </div>
+              <p data-i18n="orbitDesc">A goal-tracking product concept built around momentum, friendly rivalry, and visual progress that turns ambitions into small, repeatable actions.</p>
+              <div class="tags">
+                <span class="tag">Product Design</span>
+                <span class="tag">SwiftUI</span>
+                <span class="tag">Onboarding</span>
+                <span class="tag">Motion UI</span>
+              </div>
+            </div>
+            <div class="project-media wide orbit-showcase">
+              <img src="/assets/images/orbit-showcase.png" alt="Orbit Goals app screens" />
+            </div>
+          </article>
         </div>
+      </section>
 
+      <section id="other-projects">
+        <div class="section-head reveal">
+          <h2 class="section-title" data-i18n="otherTitle">Other work.</h2>
+          <p class="section-copy" data-i18n="otherCopy">Selected supporting projects across mobile apps, web interfaces, backend work, and product concepts.</p>
+        </div>
+        <div class="project-grid reveal" id="projectGrid"></div>
+      </section>
 
-      </div>
-    </div>
+      <section id="tech-stack">
+        <div class="section-head reveal">
+          <h2 class="section-title" data-i18n="stackTitle">Tech stack.</h2>
+          <p class="section-copy" data-i18n="stackCopy">Organized by how products are actually built: language, interface, data, cloud, AI, design, and tools.</p>
+        </div>
+        <div class="stack-grid reveal" id="stackGrid"></div>
+      </section>
+
+      <section id="experience">
+        <div class="section-head reveal">
+          <h2 class="section-title" data-i18n="experienceTitle">Experience timeline.</h2>
+          <p class="section-copy" data-i18n="experienceCopy">A focused path across information technology, Apple Developer Academy, freelance work, and product building.</p>
+        </div>
+        <div class="timeline reveal" id="timeline"></div>
+      </section>
+
+      <section id="achievements">
+        <div class="section-head reveal">
+          <h2 class="section-title" data-i18n="achievementsTitle">Achievements.</h2>
+          <p class="section-copy" data-i18n="achievementsCopy">Signals of range, craft, and product thinking.</p>
+        </div>
+        <div class="achievement-grid reveal" id="achievementGrid"></div>
+      </section>
+
+      <section id="philosophy">
+        <div class="philosophy reveal">
+          <p data-i18n="philosophy">I build software that is simple to use, accessible, and designed around real user problems.</p>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="contact-grid reveal">
+          <div class="contact-panel">
+            <p class="eyebrow" data-i18n="contactEyebrow">Open for selected work</p>
+            <h2 data-i18n="contactTitle">Let’s build something useful.</h2>
+            <p data-i18n="contactCopy">Have a product idea, app concept, or technical workflow that needs a clean implementation? Reach out and I’ll get back to you.</p>
+          </div>
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:Sajakhalid37@gmail.com"><strong data-i18n="contactEmail">Email</strong><span>Sajakhalid37@gmail.com</span></a>
+            <a class="contact-link" href="https://www.linkedin.com/in/saja-alghamdii/" target="_blank" rel="noopener noreferrer"><strong data-i18n="contactLinkedIn">LinkedIn</strong><span data-i18n="contactProfile">Profile</span></a>
+            <a class="contact-link" href="https://www.behance.net/sgaalghamdi" target="_blank" rel="noopener noreferrer"><strong data-i18n="contactBehance">Behance</strong><span data-i18n="contactPortfolio">Portfolio</span></a>
+            <a class="contact-link" href="https://github.com/Saja12344" target="_blank" rel="noopener noreferrer"><strong data-i18n="contactGitHub">GitHub</strong><span data-i18n="contactCode">Code</span></a>
+            <a class="contact-link" href="/assets/saja_resum.pdf" target="_blank" rel="noopener noreferrer"><strong data-i18n="contactResume">Resume</strong><span data-i18n="contactPdf">PDF</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span data-i18n="footerName">SAJA ALHOMRANY</span>
+      <span data-i18n="footerRole">Software Engineer</span>
+      <span>©2026</span>
+    </footer>
   </div>
-</section>
-
-
-
-<!-- Connect Section -->
-<section class="section" id="connect">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Let's Connect</h2>
-      <div class="section-line"></div>
-    </div>
-
-    <p style="color: var(--text-secondary); margin-bottom: 32px; font-family: 'VT323', monospace; font-size: 18px; letter-spacing: 1px;">
-      // Find me on these platforms
-    </p>
-
-<!-- <div class="connect-layout"> -->
-<!-- <div class="tiktok-section">
-  <h3 class="tiktok-header">Latest TikTok</h3>
-
-<div id="tiktok-placeholder">
-  <p class="tiktok-caption">
-    One of my top-performing TikToks about iOS & SwiftUI 🚀
-  </p>
-
-  <div class="tiktok-stats">
-    <div class="tiktok-stat">
-      <span class="heart-icon">♥</span>
-      <strong id="like-count">0</strong>
-    </div>
-    <div class="tiktok-stat">
-      <span>👁</span>
-      <span id="view-count">0 views</span>
-    </div>
-  </div>
-
-  <a href="https://www.tiktok.com/@sgakhalid" target="_blank" class="tiktok-button">
-    ↗ View on TikTok
-  </a>
-</div>
-</div> -->
-
-    <!-- 👇 هنا الغلاف المهم -->
-    <div class="social-cards">
-
-      <a href="https://www.linkedin.com/in/saja-alghamdii/" target="_blank" class="social-card" aria-label="LinkedIn">
-        <div class="social-icon linkedin">
-           <svg viewBox="0 0 24 24">
-    <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 24h5V7H0v17zM7.5 7h4.8v2.3h.07c.67-1.2 2.3-2.47 4.73-2.47 5.06 0 6 3.33 6 7.66V24h-5v-7.6c0-1.8-.03-4.13-2.5-4.13-2.5 0-2.88 1.95-2.88 4v7.73h-5V7z"/>
-  </svg>
-        </div>
-      </a>
-
-      <a href="https://github.com/Saja12344" target="_blank" class="social-card" aria-label="GitHub">
-        <div class="social-icon github">
-            <svg viewBox="0 0 24 24">
-    <path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.1 3.29 9.42 7.86 10.95.58.1.79-.25.79-.56v-2.02c-3.2.7-3.87-1.38-3.87-1.38-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.3 1.2-3.12-.12-.3-.52-1.52.1-3.17 0 0 .97-.31 3.18 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.18-1.2 3.18-1.2.62 1.65.22 2.87.1 3.17.75.82 1.2 1.86 1.2 3.12 0 4.43-2.69 5.4-5.25 5.68.41.36.78 1.07.78 2.15v3.18c0 .31.21.66.8.55A11.52 11.52 0 0 0 23.5 12C23.5 5.74 18.27.5 12 .5z"/>
-  </svg>
-        </div>
-      </a>
-
-      <a href="https://www.tiktok.com/@sgakhalid" target="_blank" class="social-card" aria-label="TikTok">
-        <div class="social-icon tiktok">
-            <svg viewBox="0 0 24 24">
-    <path d="M21 8.1c-1.4 0-2.7-.4-3.8-1.2v8.1c0 3.2-2.6 5.8-5.8 5.8S5.6 18.2 5.6 15s2.6-5.8 5.8-5.8c.3 0 .6 0 .9.1v2.7c-.3-.1-.6-.2-.9-.2-1.8 0-3.2 1.4-3.2 3.2s1.4 3.2 3.2 3.2 3.2-1.4 3.2-3.2V2h2.7c.3 2 2 3.5 4 3.6v2.5z"/>
-  </svg>
-        </div>
-      </a>
-        <a href="https://x.com/programmer_sga?s=21" target="_blank" class="social-card" aria-label="X">
-        <div class="social-icon twitter">
-           <svg viewBox="0 0 24 24">
-    <path d="M18.244 2H21l-6.534 7.47L22.5 22h-6.2l-4.84-6.16L5.6 22H2.84l6.98-7.98L1.5 2h6.35l4.37 5.58L18.244 2zm-1.1 18h1.53L7.1 4h-1.6l11.64 16z"/>
-  </svg>
-        </div>
-      </a>
-
-    </div>
-    <!-- 👆 نهاية الغلاف -->
-
-  </div>
-</section>
-
-
-
-
-
-
-
-<!-- Contact Section -->
-<div class="contact-section">
-  <h3 class="contact-title">&lt;Contact /&gt;</h3>
-
-  <p class="contact-text terminal-text">
-    > Have an idea? a project? _<span class="cursor">|</span>
-  </p>
-
-  <form class="contact-form" action="https://formspree.io/f/xbddldey" method="POST">
-
-    <input
-      type="text"
-      name="name"
-      placeholder="Your name"
-      required
-      class="contact-input"
-    />
-
-    <input
-      type="email"
-      name="email"
-      placeholder="Your email"
-      required
-      class="contact-input"
-    />
-
-    <input
-      type="tel"
-      name="phone"
-      placeholder="Phone (optional)"
-      class="contact-input"
-    />
-
-    <select name="reason" required class="contact-select">
-      <option value="">Reason for contact</option>
-      <option value="Freelance">Freelance</option>
-      <option value="Consultation">Consultation</option>
-      <option value="Collaboration">Collaboration</option>
-      <option value="Other">Other</option>
-    </select>
-
-    <textarea
-      name="message"
-      placeholder="Write your message..."
-      required
-      class="contact-textarea"
-    ></textarea>
-
-    <button type="submit" class="contact-button">
-      Send Message ↗
-    </button>
-  </form>
-</div>
-
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p style="font-family: 'VT323', monospace; font-size: 16px; letter-spacing: 1px;">
-      © 2026 Saja Alhomrany — Crafted with &lt;code /&gt; & ♥
-      </p>
-    </div>
-  </footer>
 
   <script>
-   
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const navLinks = document.querySelector('.nav-links');
-
-mobileMenuBtn.addEventListener('click', () => {
-  navLinks.classList.toggle('mobile-open');
-});
-
-const languageToggle = document.querySelector('.language-toggle');
-
-const translations = {
-  en: {
-    lang: "en",
-    dir: "ltr",
-    switchLabel: "العربية",
-    title: "Saja Khalid | Software Engineer",
-    nav: ["Portfolio", "Resume", "Connect"],
-    heroPrefix: "I build",
-    typedWords: ["software solutions", "web & mobile apps", "scalable systems", "clean architectures", "real-world products"],
-    tagline: "// Turning ideas into real, production-ready solutions",
-    sectionTitles: ["Projects", "Backend Projects", "Resume", "Let's Connect"],
-    portfolioKicker: "Selected product work across iOS, UI/UX, backend integration, and polished launch-ready experiences.",
-    readMore: "Read more",
-    readLess: "Show less",
-    showMore: "Show more",
-    projects: [
-      ["Sensic", "A sensory music experience that turns sound into touch through custom haptic controls. The app includes recording flows, practice mode, haptic intensity and sharpness tuning, and a polished iOS interface built around accessibility, rhythm, and emotional interaction."],
-      ["Orbit Goals", "A goal-tracking product concept built around momentum, friendly rivalry, and visual progress. The onboarding system introduces goal shapes, motion-based milestones, and a clear task orbit that helps users turn ambitions into small, repeatable actions."],
-      ["Abjad Kindergarten", "A clean and engaging website for Abjad Kindergarten designed to provide parents with easy access to key information and contact details. The site emphasizes clarity, trust, and a smooth user experience. Built using React with a focus on structure, flow, and usability to make navigation simple and communication effortless."],
-      ["Movie App", "An iOS app built with SwiftUI using real backend APIs. I implemented the full UI from Figma designs, integrated multiple endpoints, handled relational data, and built stable loading/error states."],
-      ["Wathiqni", "A privacy-first verification platform designed to reduce fraud and unnecessary data sharing. It enables secure identity confirmation between individuals and companies, as well as peer-to-peer verification without exposing sensitive personal information."],
-      ["Glutinc", "A community-driven iOS application designed for people with gluten sensitivity. The app allows users to scan food products, view ingredient details, and check gluten safety in real time. Users can also share personal experiences, rate products, and explore community-recommended gluten-free options."],
-      ["Learning Journey", "A habit-based iOS learning tracker that focuses on building consistency through streaks and visual progress indicators. The app includes dynamic success and failure states that respond to user actions in real time, helping users stay motivated."],
-      ["Colora", "A creative self-reflection iOS app that merges guided drawing, emotional prompts, and journaling into a single interactive experience. Users can express emotions through a dynamic canvas, track progress, and maintain habits with a streak-based system."],
-      ["Flavor Vista AI", "A full UI/UX overhaul of an AI-powered platform aimed at simplifying complex workflows and enhancing the overall user experience. I redesigned the interface from the ground up using Figma, redefined navigation patterns, and optimized user flows."],
-      ["Jareeb", "A time-aware recommendation app that suggests activities and places based on how much free time the user has. The app emphasizes clean navigation, clear decision-making flows, and accessibility-focused UI patterns."],
-      ["VERGE", "A conceptual fashion UI/UX project that blends cultural identities into a cohesive digital experience. The design emphasizes meaning-driven interactions, visual storytelling, and a modern aesthetic that reflects authenticity and diversity."]
-    ],
-    backendIntro: "// Server-side systems, APIs & logic",
-    backend: [
-      ["Speech Analysis API", "A backend service that analyzes speech-to-text input and evaluates vocal delivery, pace, filler words, and content structure. Designed to support real-time feedback for presentation and communication training."],
-      ["Movie Data Management System", "A data-driven system built around RESTful APIs to manage movies, actors, directors, and reviews. The project focuses on consuming CRUD endpoints, modeling relational data, handling asynchronous requests, and managing error states."],
-      ["CloudKit Data Layer", "A structured CloudKit backend layer handling public and private databases, user authentication, relational records, and data syncing across devices."]
-    ],
-    resumeIntro: "// My professional journey & experience",
-    resumeDownload: "View Resume (PDF)",
-    resume: [
-      ["iOS Developer (Part-time)", "Aug 2024 – Present // Apple Developer Academy, Riyadh", "Working in multidisciplinary teams to design and prototype innovative iOS applications using Swift and Xcode.", ["Developed iOS apps using Swift & SwiftUI", "Participated in Agile sprints and daily standups", "Contributed to code reviews and UI/UX decisions", "Built interactive prototypes and MVPs"]],
-      ["iOS Developer Intern", "May 2025 – Apr 2025 // Macromin Solution (Remote)", "Developed and tested app features in an Agile environment, collaborating remotely with cross-functional teams.", ["Implemented SwiftUI views and logic", "Used GitHub for version control & collaboration", "Participated in UI/UX discussions using Figma", "Followed Apple Human Interface Guidelines"]],
-      ["iOS Developer Intern", "Nov 2024 – Dec 2024 // Apple Foundation Program, Riyadh", "Built an iOS prototype with scalable architecture and responsive UI layouts.", ["Developed core features using SwiftUI", "Implemented tab navigation & data handling", "Debugged and optimized app performance", "Worked in team-based workshops"]],
-      ["IT Specialist", "Aug 2023 – Jun 2024 // Ali Al Sunaidi Foundation, Jeddah", "Maintained IT systems and infrastructure while improving reliability and uptime.", ["Increased system uptime to 99.9%", "Installed and configured routers & switches", "Resolved recurring system issues", "Integrated software solutions"]],
-      ["Bachelor of Computer Science (IT)", "2019 – 2023 // Al-Baha University", "Specialized in Information Technology with focus on software development.", ["Studied software engineering principles", "Built multiple academic projects", "Learned web & mobile technologies"]]
-    ],
-    connectIntro: "// Find me on these platforms",
-    contactTitle: "<Contact />",
-    contactText: "> Have an idea? a project? _",
-    form: {
-      name: "Your name",
-      email: "Your email",
-      phone: "Phone (optional)",
-      reason: "Reason for contact",
-      options: ["Reason for contact", "Freelance", "Consultation", "Collaboration", "Other"],
-      message: "Write your message...",
-      button: "Send Message ↗"
-    },
-    footer: "© 2026 Saja Alhomrany — Crafted with &lt;code /&gt; & ♥"
-  },
-  ar: {
-    lang: "ar",
-    dir: "rtl",
-    switchLabel: "English",
-    title: "سجى خالد | مهندسة برمجيات",
-    nav: ["الأعمال", "السيرة", "تواصل"],
-    heroPrefix: "أبني",
-    typedWords: ["حلول برمجية", "تطبيقات ويب وجوال", "أنظمة قابلة للتوسع", "معماريات نظيفة", "منتجات واقعية"],
-    tagline: "// تحويل الأفكار إلى حلول حقيقية جاهزة للإطلاق",
-    sectionTitles: ["المشاريع", "مشاريع الباكند", "السيرة", "تواصل معي"],
-    portfolioKicker: "مختارات من أعمال المنتج عبر iOS وتجربة المستخدم وتكاملات الباكند وتجارب جاهزة للإطلاق.",
-    readMore: "اقرأ المزيد",
-    readLess: "عرض أقل",
-    showMore: "عرض المزيد",
-    projects: [
-      ["Sensic", "تجربة موسيقية حسية تحول الصوت إلى لمسات عبر تحكمات haptics مخصصة. يضم التطبيق تسجيلات، وضع تدريب، ضبط شدة ونعومة الاهتزاز، وواجهة iOS مصممة حول الوصولية والإيقاع والتفاعل العاطفي."],
-      ["Orbit Goals", "تصور منتج لتتبع الأهداف مبني حول الزخم والمنافسة اللطيفة والتقدم البصري. يعرّف نظام البداية أشكال الأهداف والمعالم المتحركة ومسار المهام لتحويل الطموحات إلى خطوات صغيرة متكررة."],
-      ["Abjad Kindergarten", "موقع واضح وجذاب لروضة أبجد يساعد أولياء الأمور على الوصول للمعلومات الأساسية وطرق التواصل بسهولة، مع تركيز على الثقة وتجربة استخدام سلسة وبنية React منظمة."],
-      ["Movie App", "تطبيق iOS مبني بـ SwiftUI ومتصل بواجهات API حقيقية. نفذت الواجهة من تصاميم Figma، وربطت عدة endpoints، وتعاملت مع البيانات العلائقية وحالات التحميل والأخطاء."],
-      ["Wathiqni", "منصة تحقق تركز على الخصوصية لتقليل الاحتيال ومشاركة البيانات غير الضرورية، وتمكّن التحقق الآمن بين الأفراد والشركات أو بين الأفراد بدون كشف معلومات حساسة."],
-      ["Glutinc", "تطبيق iOS مجتمعي للأشخاص ذوي حساسية الغلوتين، يتيح فحص المنتجات ومعرفة تفاصيل المكونات وسلامة الغلوتين، مع مشاركة التجارب وتقييم المنتجات وخيارات خالية من الغلوتين."],
-      ["Learning Journey", "تطبيق iOS لتتبع التعلم والعادات يركز على الاستمرارية من خلال streaks ومؤشرات تقدم بصرية، مع حالات نجاح وفشل ديناميكية تساعد المستخدم على الاستمرار."],
-      ["Colora", "تطبيق iOS للتأمل الذاتي يدمج الرسم الموجه والمحفزات العاطفية والتدوين في تجربة تفاعلية واحدة، مع كانفاس ديناميكي وتقويم مخصص ونظام عادات."],
-      ["Flavor Vista AI", "إعادة تصميم UI/UX لمنصة مدعومة بالذكاء الاصطناعي بهدف تبسيط سير العمل وتحسين تجربة المستخدم، مع إعادة بناء التنقل وتدفقات الاستخدام عبر Figma."],
-      ["Jareeb", "تطبيق توصيات ذكي يقترح أنشطة وأماكن حسب وقت الفراغ المتاح لدى المستخدم، مع تنقل واضح وأنماط واجهة تراعي الوصولية وتجربة اتخاذ القرار."],
-      ["VERGE", "مشروع UI/UX مفاهيمي في مجال الأزياء يمزج الهويات الثقافية في تجربة رقمية متماسكة، مع تركيز على السرد البصري والتفاعل المرتبط بالمعنى."]
-    ],
-    backendIntro: "// أنظمة الخادم وواجهات API والمنطق",
-    backend: [
-      ["Speech Analysis API", "خدمة backend تحلل النص المحول من الكلام وتقيم الأداء الصوتي والسرعة والكلمات الزائدة وبنية المحتوى لدعم ملاحظات فورية للتدريب على العروض والتواصل."],
-      ["Movie Data Management System", "نظام بيانات مبني حول REST APIs لإدارة الأفلام والممثلين والمخرجين والمراجعات، مع نمذجة بيانات علائقية والتعامل مع الطلبات غير المتزامنة وحالات الأخطاء."],
-      ["CloudKit Data Layer", "طبقة بيانات CloudKit منظمة للتعامل مع قواعد بيانات عامة وخاصة، مصادقة المستخدمين، السجلات العلائقية، ومزامنة البيانات بين الأجهزة."]
-    ],
-    resumeIntro: "// رحلتي المهنية وخبراتي",
-    resumeDownload: "عرض السيرة الذاتية (PDF)",
-    resume: [
-      ["مطورة iOS - دوام جزئي", "أغسطس 2024 – الآن // Apple Developer Academy، الرياض", "العمل ضمن فرق متعددة التخصصات لتصميم ونمذجة تطبيقات iOS مبتكرة باستخدام Swift وXcode.", ["تطوير تطبيقات iOS باستخدام Swift وSwiftUI", "المشاركة في سبرنتات Agile واجتماعات يومية", "المساهمة في مراجعات الكود وقرارات UI/UX", "بناء نماذج تفاعلية وMVPs"]],
-      ["متدربة تطوير iOS", "مايو 2025 – أبريل 2025 // Macromin Solution (عن بعد)", "تطوير واختبار مزايا التطبيق ضمن بيئة Agile بالتعاون عن بعد مع فرق متعددة.", ["تنفيذ واجهات ومنطق SwiftUI", "استخدام GitHub لإدارة الإصدارات والتعاون", "المشاركة في نقاشات UI/UX عبر Figma", "اتباع إرشادات Apple Human Interface"]],
-      ["متدربة تطوير iOS", "نوفمبر 2024 – ديسمبر 2024 // Apple Foundation Program، الرياض", "بناء نموذج iOS ببنية قابلة للتوسع وواجهات متجاوبة.", ["تطوير المزايا الأساسية باستخدام SwiftUI", "تنفيذ التنقل عبر التبويبات ومعالجة البيانات", "تصحيح الأخطاء وتحسين الأداء", "العمل ضمن ورش جماعية"]],
-      ["أخصائية تقنية معلومات", "أغسطس 2023 – يونيو 2024 // مؤسسة علي السنيدي، جدة", "صيانة أنظمة وبنية تقنية المعلومات مع تحسين الاعتمادية ووقت التشغيل.", ["رفع جاهزية النظام إلى 99.9%", "تركيب وإعداد الراوترات والسويتشات", "حل المشاكل المتكررة", "دمج حلول برمجية"]],
-      ["بكالوريوس علوم حاسب - تقنية معلومات", "2019 – 2023 // جامعة الباحة", "تخصص تقنية معلومات مع تركيز على تطوير البرمجيات.", ["دراسة مبادئ هندسة البرمجيات", "بناء عدة مشاريع أكاديمية", "تعلم تقنيات الويب والجوال"]]
-    ],
-    connectIntro: "// حساباتي وروابط التواصل",
-    contactTitle: "<تواصل />",
-    contactText: "> عندك فكرة؟ مشروع؟ _",
-    form: {
-      name: "اسمك",
-      email: "بريدك الإلكتروني",
-      phone: "رقم الجوال (اختياري)",
-      reason: "سبب التواصل",
-      options: ["سبب التواصل", "عمل حر", "استشارة", "تعاون", "أخرى"],
-      message: "اكتب رسالتك...",
-      button: "إرسال الرسالة ↗"
-    },
-    footer: "© 2026 سجى الحمراني — صُمم بـ &lt;code /&gt; و ♥"
-  }
-};
-
-let currentLang = "en";
-let words = translations.en.typedWords;
-
-
-let i = 0;
-let j = 0;
-let isDeleting = false;
-
-const speed = 140;
-let el = document.getElementById("typed");
-
-function typeEffect() {
-  const current = words[i];
-
-  if (!isDeleting) {
-    el.textContent = current.substring(0, j + 1);
-    j++;
-  } else {
-    el.textContent = current.substring(0, j - 1);
-    j--;
-  }
-
-  if (!isDeleting && j === current.length) {
-    setTimeout(() => isDeleting = true, 1800);
-  }
-
-  if (isDeleting && j === 0) {
-    isDeleting = false;
-    i = (i + 1) % words.length;
-  }
-
-  setTimeout(typeEffect, isDeleting ? speed / 2 : speed);
-}
-
-typeEffect();
-
-function updateToggleButtons(t) {
-  document.querySelectorAll(".read-more-btn").forEach(btn => {
-    const desc = btn.previousElementSibling;
-    btn.textContent = desc && desc.classList.contains("expanded") ? t.readLess : t.readMore;
-  });
-
-  document.querySelectorAll(".resume-toggle-btn").forEach(btn => {
-    const card = btn.closest(".highlight-card");
-    btn.textContent = card && card.classList.contains("expanded") ? t.readLess : t.showMore;
-  });
-}
-
-function applyLanguage(lang) {
-  currentLang = lang;
-  const t = translations[lang];
-
-  document.documentElement.lang = t.lang;
-  document.body.dir = t.dir;
-  document.title = t.title;
-  languageToggle.textContent = t.switchLabel;
-  languageToggle.setAttribute("aria-label", lang === "en" ? "Switch to Arabic" : "التبديل إلى الإنجليزية");
-
-  document.querySelectorAll(".nav-links a").forEach((link, index) => {
-    if (t.nav[index]) link.textContent = t.nav[index];
-  });
-
-  const heroTitle = document.querySelector(".hero h1");
-  heroTitle.innerHTML = `${t.heroPrefix} <span id="typed"></span><span class="cursor">|</span>`;
-  el = document.getElementById("typed");
-  words = t.typedWords;
-  i = 0;
-  j = 0;
-  isDeleting = false;
-  el.textContent = "";
-  document.querySelector(".tagline").textContent = t.tagline;
-
-  document.querySelectorAll(".section-title").forEach((title, index) => {
-    if (t.sectionTitles[index]) title.textContent = t.sectionTitles[index];
-  });
-
-  document.querySelector(".portfolio-kicker").textContent = t.portfolioKicker;
-
-  document.querySelectorAll(".projects-grid .project-card").forEach((card, index) => {
-    const item = t.projects[index];
-    if (!item) return;
-    card.querySelector(".project-title").textContent = item[0];
-    card.querySelector(".project-description").textContent = item[1];
-  });
-
-  const backendIntro = document.querySelector("#backend .container > p");
-  if (backendIntro) backendIntro.textContent = t.backendIntro;
-
-  document.querySelectorAll(".backend-card").forEach((card, index) => {
-    const item = t.backend[index];
-    if (!item) return;
-    card.querySelector(".backend-title").textContent = item[0];
-    card.querySelector(".project-description").textContent = item[1];
-  });
-
-  const resumeIntro = document.querySelector(".resume-intro");
-  if (resumeIntro) resumeIntro.textContent = t.resumeIntro;
-  const resumeDownload = document.querySelector(".download-btn");
-  if (resumeDownload) resumeDownload.textContent = t.resumeDownload;
-
-  document.querySelectorAll(".highlight-card").forEach((card, index) => {
-    const item = t.resume[index];
-    if (!item) return;
-    card.querySelector(".highlight-title").textContent = item[0];
-    card.querySelector(".highlight-period").textContent = item[1];
-    card.querySelector(".highlight-description").textContent = item[2];
-    card.querySelectorAll(".highlight-list li").forEach((li, liIndex) => {
-      if (item[3][liIndex]) li.textContent = item[3][liIndex];
-    });
-  });
-
-  const connectIntro = document.querySelector("#connect .container > p");
-  if (connectIntro) connectIntro.textContent = t.connectIntro;
-
-  document.querySelector(".contact-title").textContent = t.contactTitle;
-  document.querySelector(".contact-text").innerHTML = `${t.contactText}<span class="cursor">|</span>`;
-  document.querySelector('input[name="name"]').placeholder = t.form.name;
-  document.querySelector('input[name="email"]').placeholder = t.form.email;
-  document.querySelector('input[name="phone"]').placeholder = t.form.phone;
-  document.querySelector('textarea[name="message"]').placeholder = t.form.message;
-  document.querySelector(".contact-button").textContent = t.form.button;
-
-  const reasonSelect = document.querySelector('select[name="reason"]');
-  reasonSelect.querySelectorAll("option").forEach((option, index) => {
-    option.textContent = t.form.options[index];
-  });
-
-  document.querySelector("footer p").innerHTML = t.footer;
-  updateToggleButtons(t);
-}
-
-languageToggle.addEventListener("click", () => {
-  applyLanguage(currentLang === "en" ? "ar" : "en");
-});
-
-const sections = document.querySelectorAll(".section");
-
-const sectionObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-    }
-  });
-}, {
-  threshold: 0.05,          // أقل
-  rootMargin: "0px 0px -80px 0px" // يفعّل أبكر
-});
-
-sections.forEach(section => {
-  sectionObserver.observe(section);
-});
-
-document.querySelectorAll(".read-more-btn").forEach(btn => {
-  btn.addEventListener("click", function(e) {
-    e.stopPropagation(); // عشان ما يشتغل كليك الكرت
-
-    const desc = this.previousElementSibling;
-    desc.classList.toggle("expanded");
-
-    this.textContent = desc.classList.contains("expanded")
-      ? translations[currentLang].readLess
-      : translations[currentLang].readMore;
-  });
-});
-document.querySelectorAll(".resume-toggle-btn").forEach(btn => {
-  btn.addEventListener("click", function () {
-    const card = this.closest(".highlight-card");
-    card.classList.toggle("expanded");
-
-    this.textContent = card.classList.contains("expanded")
-      ? translations[currentLang].readLess
-      : translations[currentLang].showMore;
-  });
-});
-
-const tiktokSection = document.querySelector('.tiktok-section');
-const likeCountEl = document.getElementById('like-count');
-const viewCountEl = document.getElementById('view-count');
-
-let animated = false;
-
-// قيم العرض
-const targetLikes = 22200;
-const targetViews = 260000;
-
-function formatNumber(num) {
-  if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
-  if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
-  return num.toString();
-}
-
-function animateCounter(element, start, target, suffix, duration) {
-  const startTime = Date.now();
-
-  function update() {
-    const elapsed = Date.now() - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    const easeOut = 1 - Math.pow(1 - progress, 3);
-    const value = Math.floor(start + (target - start) * easeOut);
-
-    element.textContent = formatNumber(value) + suffix;
-
-    if (progress < 1) requestAnimationFrame(update);
-  }
-
-  requestAnimationFrame(update);
-}
-
-if (tiktokSection) {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !animated) {
-        animated = true;
-
-        animateCounter(likeCountEl, 0, targetLikes, '', 2000);
-        animateCounter(viewCountEl, 0, targetViews, ' views', 2000);
+    const data = {
+      en: {
+        brand: "SAJA ALHOMRANY",
+        langButton: "العربية",
+        navProjects: "Projects",
+        navSkills: "Tech",
+        navExperience: "Experience",
+        navContact: "Contact",
+        heroEyebrow: "Digital Product Engineer Showcase",
+        heroTitle: "SAJA ALHOMRANY",
+        heroCopy: "Software engineer building products that solve real-world problems across mobile apps, web platforms, backend systems, and AI-assisted workflows.",
+        explore: "Explore Projects",
+        contact: "Contact",
+        metaOne: "Apple Developer Academy Graduate",
+        metaTwo: "Freelance Software Engineer",
+        metaThree: "AI Powered Product Builder",
+        aboutTitle: "Product-minded engineering.",
+        aboutCopy: "I design and build practical digital products with a focus on clarity, accessibility, clean systems, and usable interfaces.",
+        aboutOne: "Software Engineer",
+        aboutTwo: "Web & Mobile Builder",
+        aboutThree: "Backend Systems",
+        aboutFour: "AI Assisted Development",
+        aboutFive: "Product Builder",
+        aboutSix: "Saudi Arabia",
+        projectsTitle: "Featured product work.",
+        projectsCopy: "Two focused product stories across goal tracking, sensory interaction, interface design, and real product execution.",
+        orbitDesc: "A goal-tracking product concept built around momentum, friendly rivalry, and visual progress that turns ambitions into small, repeatable actions.",
+        sensicDesc: "A sensory music experience that turns sound into touch through custom haptic controls, practice mode, recordings, and accessibility-focused interaction.",
+        sensicCaseStudy: "View Case Study",
+        sensicAppStore: "Available on App Store",
+        projectCaseStudy: "Case Study",
+        otherTitle: "Other work.",
+        otherCopy: "Selected supporting projects across mobile apps, web interfaces, backend work, and product concepts.",
+        stackTitle: "Tech stack.",
+        stackCopy: "Organized by how products are actually built: language, interface, data, cloud, AI, design, and tools.",
+        experienceTitle: "Experience timeline.",
+        experienceCopy: "A focused path across information technology, Apple Developer Academy, freelance work, and product building.",
+        achievementsTitle: "Achievements.",
+        achievementsCopy: "Signals of range, craft, and product thinking.",
+        philosophy: "I build software that is simple to use, accessible, and designed around real user problems.",
+        contactEyebrow: "Open for selected work",
+        contactTitle: "Let’s build something useful.",
+        contactCopy: "Have a product idea, app concept, or technical workflow that needs a clean implementation? Reach out and I’ll get back to you.",
+        contactEmail: "Email",
+        contactLinkedIn: "LinkedIn",
+        contactBehance: "Behance",
+        contactGitHub: "GitHub",
+        contactResume: "Resume",
+        contactProfile: "Profile",
+        contactPortfolio: "Portfolio",
+        contactCode: "Code",
+        contactPdf: "PDF",
+        footerName: "SAJA ALHOMRANY",
+        footerRole: "Software Engineer",
+        projects: [
+          ["Glutinc", "A mobile community product for gluten sensitivity, product scanning, safety checks, and user recommendations.", "/assets/images/glutinc-showcase.png", "https://www.behance.net/gallery/251838125/Glutnic"],
+          ["VERGE", "A fashion UI/UX concept blending cultural identities through visual storytelling.", "/assets/images/verge-showcase.png", "https://www.behance.net/gallery/251839921/Verge"],
+          ["Colora", "A creative self-reflection app combining drawing, emotional prompts, and journaling.", "/assets/images/colora-showcase.png", "https://www.behance.net/gallery/251839475/Colora"],
+          ["Movie Center", "A SwiftUI movie app connected to real backend APIs, relational data, and stable loading states.", "/assets/images/movie-center-showcase.png"],
+          ["Learning Journey", "A habit-based learning tracker for daily progress, streaks, freeze days, personalized goals, and motivational completion flows.", "/assets/images/learning-journey-activity.png"],
+          ["Jareeb", "A time-aware recommendation app that suggests places and activities based on available free time.", "/assets/images/jareeb-showcase.png"],
+          ["Vista", "A UI enhancement project that refines the existing interface, improves screen hierarchy, and adds a stronger visual identity for a more polished product experience.", "/assets/images/vista-showcase.png"],
+          ["Abjd", "A clean kindergarten website built for parent clarity, trust, and simple communication.", "/assets/images/abjd-showcase.png"]
+        ],
+        skills: ["Swift", "SwiftUI", "Flutter", "React Native", "Node.js", "Express", "Python", "Firebase", "Supabase", "REST API", "Git", "Figma", "UI/UX", "AI", "OpenAI", "Claude", "Cursor", "Xcode"],
+        stack: [
+          ["Languages", ["Swift", "JavaScript", "Python", "Java", "HTML/CSS"]],
+          ["Frameworks", ["SwiftUI", "React Native", "Flutter", "Node.js", "Express"]],
+          ["Databases", ["Firebase", "Supabase", "CloudKit", "Relational Data"]],
+          ["Cloud", ["iCloud", "REST APIs", "Deployment", "TestFlight"]],
+          ["AI", ["OpenAI", "Claude", "AI Workflows", "Prompt Systems"]],
+          ["Design", ["Figma", "UI/UX", "Accessibility", "Product Thinking"]],
+          ["Tools", ["Cursor", "Xcode", "GitHub", "Postman", "Jira"]]
+        ],
+        timeline: [
+          ["2019 - 2023", "Bachelor of Information Technology", "Al-Baha University, focused on software foundations and applied IT."],
+          ["2024 - 2025", "Apple Developer Academy", "Built mobile prototypes, practiced product thinking, and worked in multidisciplinary teams."],
+          ["2025", "Freelance Software Engineer", "Delivering web and mobile experiences for real clients and practical needs."],
+          ["Now", "Building Digital Products", "Exploring AI-assisted development, accessible interfaces, and launch-ready systems."]
+        ],
+        achievements: ["Apple Developer Academy", "Freelance Projects", "Multiple Production Apps", "Cross Platform Development", "AI Integration", "Accessibility Focus", "Arabic + English Products", "Backend Integration"]
+      },
+      ar: {
+        brand: "سجى الحمراني",
+        langButton: "English",
+        navProjects: "المشاريع",
+        navSkills: "التقنيات",
+        navExperience: "الخبرة",
+        navContact: "تواصل",
+        heroEyebrow: "استعراض هندسي لمنتجات رقمية",
+        heroTitle: "سجى الحمراني",
+        heroCopy: "مهندسة برمجيات تبني منتجات تحل مشاكل واقعية عبر تطبيقات الجوال، ومنصات الويب، وأنظمة الباكند، وسير العمل المدعوم بالذكاء الاصطناعي.",
+        explore: "استعراض المشاريع",
+        contact: "تواصل",
+        metaOne: "خريجة أكاديمية مطوري آبل",
+        metaTwo: "مهندسة برمجيات مستقلة",
+        metaThree: "بناء منتجات مدعومة بالذكاء الاصطناعي",
+        aboutTitle: "هندسة برمجية بعقلية منتج.",
+        aboutCopy: "أصمم وأبني منتجات رقمية عملية تركز على الوضوح، والوصولية، والأنظمة النظيفة، والواجهات سهلة الاستخدام.",
+        aboutOne: "مهندسة برمجيات",
+        aboutTwo: "بناء ويب وجوال",
+        aboutThree: "أنظمة باكند",
+        aboutFour: "تطوير بمساعدة الذكاء الاصطناعي",
+        aboutFive: "بناء منتجات",
+        aboutSix: "السعودية",
+        projectsTitle: "أعمال منتجات مختارة.",
+        projectsCopy: "قصتان مركزتان حول تتبع الأهداف، والتفاعل الحسي، وتصميم الواجهات، وتنفيذ منتجات قابلة للاستخدام.",
+        orbitDesc: "تصور منتج لتتبع الأهداف مبني حول الزخم والمنافسة اللطيفة والتقدم البصري لتحويل الطموحات إلى خطوات صغيرة متكررة.",
+        sensicDesc: "تجربة موسيقية حسية تحول الصوت إلى لمس عبر اهتزازات مخصصة، ووضع تدريب، وتسجيلات، وتفاعل يراعي الوصولية.",
+        sensicCaseStudy: "عرض دراسة الحالة",
+        sensicAppStore: "متوفر على App Store",
+        projectCaseStudy: "دراسة الحالة",
+        otherTitle: "أعمال أخرى.",
+        otherCopy: "مشاريع داعمة مختارة عبر تطبيقات الجوال وواجهات الويب والباكند ومفاهيم المنتجات.",
+        stackTitle: "التقنيات.",
+        stackCopy: "مرتبة حسب طريقة بناء المنتجات فعليًا: لغات، واجهات، بيانات، سحابة، ذكاء اصطناعي، تصميم، وأدوات.",
+        experienceTitle: "مسار الخبرة.",
+        experienceCopy: "مسار مركز بين تقنية المعلومات وأكاديمية مطوري آبل والعمل الحر وبناء المنتجات.",
+        achievementsTitle: "إنجازات.",
+        achievementsCopy: "مؤشرات على التنوع، والإتقان، والتفكير بعقلية منتج.",
+        philosophy: "أبني برمجيات سهلة الاستخدام، قابلة للوصول، ومصممة حول مشاكل المستخدم الحقيقية.",
+        contactEyebrow: "متاحة لأعمال مختارة",
+        contactTitle: "لنبني شيئاً مفيداً.",
+        contactCopy: "عندك فكرة منتج أو تطبيق أو سير عمل تقني يحتاج تنفيذ واضح؟ تواصل معي وسأرد عليك.",
+        contactEmail: "البريد الإلكتروني",
+        contactLinkedIn: "لينكدإن",
+        contactBehance: "Behance",
+        contactGitHub: "GitHub",
+        contactResume: "السيرة الذاتية",
+        contactProfile: "الملف",
+        contactPortfolio: "الأعمال",
+        contactCode: "الكود",
+        contactPdf: "PDF",
+        footerName: "سجى الحمراني",
+        footerRole: "مهندسة برمجيات",
+        projects: [
+          ["Glutinc", "منتج جوال مجتمعي لحساسية الغلوتين، يساعد على فحص المنتجات، والتحقق من السلامة، واستعراض توصيات المستخدمين.", "/assets/images/glutinc-showcase.png", "https://www.behance.net/gallery/251838125/Glutnic"],
+          ["VERGE", "مفهوم UI/UX في الأزياء يمزج الهويات الثقافية عبر سرد بصري.", "/assets/images/verge-showcase.png", "https://www.behance.net/gallery/251839921/Verge"],
+          ["Colora", "تطبيق للتأمل الذاتي يجمع الرسم، والمحفزات العاطفية، والتدوين.", "/assets/images/colora-showcase.png", "https://www.behance.net/gallery/251839475/Colora"],
+          ["Movie Center", "تطبيق أفلام SwiftUI متصل بواجهات API حقيقية وبيانات علائقية وحالات تحميل مستقرة.", "/assets/images/movie-center-showcase.png"],
+          ["Learning Journey", "متتبع تعلم مبني على العادات اليومية، وسلاسل الإنجاز، وأيام التجميد، والأهداف الشخصية، وحالات الإنجاز التحفيزية.", "/assets/images/learning-journey-activity.png"],
+          ["Jareeb", "تطبيق توصيات يقترح أماكن وأنشطة حسب وقت الفراغ المتاح.", "/assets/images/jareeb-showcase.png"],
+          ["Vista", "مشروع تحسين واجهات يركز على تطوير شكل التطبيق الحالي، تحسين ترتيب الشاشات، وإضافة هوية بصرية أقوى لتجربة أكثر احترافية.", "/assets/images/vista-showcase.png"],
+          ["Abjd", "موقع روضة واضح يساعد أولياء الأمور على الوصول للمعلومات والتواصل بسهولة.", "/assets/images/abjd-showcase.png"]
+        ],
+        skills: ["Swift", "SwiftUI", "Flutter", "React Native", "Node.js", "Express", "Python", "Firebase", "Supabase", "REST API", "Git", "Figma", "UI/UX", "AI", "OpenAI", "Claude", "Cursor", "Xcode"],
+        stack: [
+          ["اللغات", ["Swift", "JavaScript", "Python", "Java", "HTML/CSS"]],
+          ["الأطر", ["SwiftUI", "React Native", "Flutter", "Node.js", "Express"]],
+          ["قواعد البيانات", ["Firebase", "Supabase", "CloudKit", "Relational Data"]],
+          ["السحابة", ["iCloud", "REST APIs", "Deployment", "TestFlight"]],
+          ["الذكاء الاصطناعي", ["OpenAI", "Claude", "AI Workflows", "Prompt Systems"]],
+          ["التصميم", ["Figma", "UI/UX", "Accessibility", "Product Thinking"]],
+          ["الأدوات", ["Cursor", "Xcode", "GitHub", "Postman", "Jira"]]
+        ],
+        timeline: [
+          ["2019 - 2023", "بكالوريوس تقنية معلومات", "جامعة الباحة، مع تركيز على أساسيات البرمجة وتقنية المعلومات التطبيقية."],
+          ["2024 - 2025", "أكاديمية مطوري آبل", "بناء نماذج جوال، والتدرب على التفكير بعقلية منتج، والعمل ضمن فرق متعددة التخصصات."],
+          ["2025", "مهندسة برمجيات مستقلة", "تنفيذ تجارب ويب وجوال لعملاء واحتياجات حقيقية."],
+          ["الآن", "بناء منتجات رقمية", "استكشاف التطوير المدعوم بالذكاء الاصطناعي والواجهات القابلة للوصول والأنظمة الجاهزة للإطلاق."]
+        ],
+        achievements: ["أكاديمية مطوري آبل", "مشاريع عمل حر", "تطبيقات متعددة", "تطوير متعدد المنصات", "تكامل الذكاء الاصطناعي", "تركيز على الوصولية", "منتجات عربية وإنجليزية", "تكاملات باكند"]
       }
+    };
+
+    const projectGrid = document.getElementById("projectGrid");
+    const stackGrid = document.getElementById("stackGrid");
+    const timeline = document.getElementById("timeline");
+    const achievementGrid = document.getElementById("achievementGrid");
+    const langButton = document.querySelector(".lang-toggle");
+    const stackIcons = ["<>", "()", "DB", "CL", "AI", "UX", "TL"];
+    const achievementIconRules = [
+      [/Apple|أكاديمية|Developer Academy/i, ""],
+      [/Freelance|حر/i, "↗"],
+      [/Production|تطبيقات متعددة/i, "▦"],
+      [/Cross|متعدد/i, "↔"],
+      [/AI|ذكاء/i, "AI"],
+      [/Accessibility|وصول/i, "A11y"],
+      [/Arabic|English|عربية|إنجليزية/i, "ع/EN"],
+      [/Backend|تكاملات/i, "API"]
+    ];
+    let currentLang = "en";
+
+    function getAchievementIcon(text) {
+      const match = achievementIconRules.find(([pattern]) => pattern.test(text));
+      return match ? match[1] : "•";
+    }
+
+    function renderCollections(t) {
+      projectGrid.innerHTML = t.projects.map(([name, description, image, url]) => `
+        <article class="project-card" data-project-name="${name}" ${url ? `data-project-url="${url}"` : ""}>
+          <div class="thumb">
+            ${image ? `<img src="${image}" alt="${name} project preview">` : `<span class="section-title" style="font-size: clamp(40px, 7vw, 86px);">${name.slice(0, 2)}</span>`}
+          </div>
+          <div class="card-body">
+            <h3>${name}</h3>
+            <p>${description}</p>
+            ${url ? `<a class="card-link" href="${url}" target="_blank" rel="noopener noreferrer">${t.projectCaseStudy}</a>` : ""}
+          </div>
+        </article>
+      `).join("");
+
+      stackGrid.innerHTML = t.stack.map(([title, items], index) => `
+        <article class="stack-column">
+          <h3>
+            <button class="stack-toggle" type="button" aria-expanded="false">
+              <span><span class="stack-icon">${stackIcons[index] || "•"}</span>${title}</span>
+            </button>
+            <span class="stack-heading"><span class="stack-icon">${stackIcons[index] || "•"}</span>${title}</span>
+          </h3>
+          <ul>${items.map(item => `<li>${item}</li>`).join("")}</ul>
+        </article>
+      `).join("");
+
+      timeline.innerHTML = t.timeline.map(([period, title, description]) => `
+        <article class="timeline-item">
+          <span>${period}</span>
+          <h3>${title}</h3>
+          <p>${description}</p>
+        </article>
+      `).join("");
+
+      achievementGrid.innerHTML = t.achievements.map(item => `<div class="achievement"><span>${item}</span><span class="achievement-mark">${getAchievementIcon(item)}</span></div>`).join("");
+    }
+
+    function applyLanguage(lang) {
+      currentLang = lang;
+      const t = data[lang];
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      document.querySelectorAll("[data-i18n]").forEach(node => {
+        const key = node.dataset.i18n;
+        if (t[key]) node.textContent = t[key];
+      });
+      renderCollections(t);
+    }
+
+    langButton.addEventListener("click", () => {
+      applyLanguage(currentLang === "en" ? "ar" : "en");
     });
-  }, { threshold: 0.3 });
 
-  observer.observe(tiktokSection);
-}
+    stackGrid.addEventListener("click", event => {
+      const toggle = event.target.closest(".stack-toggle");
+      if (!toggle) return;
+      const column = toggle.closest(".stack-column");
+      const isOpen = column.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+    });
 
+    projectGrid.addEventListener("click", event => {
+      const card = event.target.closest("[data-project-url]");
+      if (!card || event.target.closest("a, button")) return;
+      window.open(card.dataset.projectUrl, "_blank", "noopener,noreferrer");
+    });
 
+    document.querySelectorAll("[data-case-study-url]").forEach(card => {
+      card.addEventListener("click", event => {
+        if (event.target.closest("a, button")) return;
+        window.open(card.dataset.caseStudyUrl, "_blank", "noopener,noreferrer");
+      });
+    });
 
+    applyLanguage("en");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(element => observer.observe(element));
+
+    document.addEventListener("pointermove", event => {
+      const x = (event.clientX / window.innerWidth - 0.5) * 16;
+      const y = (event.clientY / window.innerHeight - 0.5) * 16;
+      document.querySelectorAll(".feature-project, .philosophy, .contact-panel").forEach((element, index) => {
+        element.style.transform = `translate3d(${x / (index + 8)}px, ${y / (index + 8)}px, 0)`;
+      });
+    });
   </script>
 </body>
 </html>
