@@ -131,9 +131,9 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      display: flex;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
       align-items: center;
-      justify-content: space-between;
       gap: 20px;
       min-height: 68px;
       padding: 0 clamp(20px, 3vw, 34px);
@@ -158,9 +158,17 @@
       opacity: 0.86;
     }
 
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-self: end;
+    }
+
     .nav-links {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: clamp(16px, 2.4vw, 34px);
       color: var(--dim);
       font-size: 12px;
@@ -174,20 +182,71 @@
       color: var(--white);
     }
 
-    .lang-toggle {
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
       border: 1px solid var(--line-soft);
-      border-radius: 999px;
-      background: transparent;
-      color: var(--muted);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--white);
       cursor: pointer;
-      padding: 8px 12px;
-      font-size: 12px;
-      transition: 0.2s ease;
+      place-items: center;
+      gap: 5px;
+      padding: 0;
+      transition: border-color 0.2s ease, background 0.2s ease;
     }
 
+    .menu-toggle span {
+      display: block;
+      width: 16px;
+      height: 1.5px;
+      border-radius: 999px;
+      background: currentColor;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .menu-toggle:hover,
     .lang-toggle:hover {
       color: var(--white);
       border-color: var(--line);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .site-nav.is-open .menu-toggle span:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg);
+    }
+
+    .site-nav.is-open .menu-toggle span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .site-nav.is-open .menu-toggle span:nth-child(3) {
+      transform: translateY(-6.5px) rotate(-45deg);
+    }
+
+    .lang-toggle {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line-soft);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--muted);
+      cursor: pointer;
+      display: inline-grid;
+      place-items: center;
+      padding: 0;
+      transition: 0.2s ease;
+    }
+
+    .lang-toggle svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     main {
@@ -965,9 +1024,12 @@
       line-height: 1.9;
     }
 
-    [dir="rtl"] .site-nav,
     [dir="rtl"] .hero-actions,
     [dir="rtl"] footer {
+      flex-direction: row-reverse;
+    }
+
+    [dir="rtl"] .nav-controls {
       flex-direction: row-reverse;
     }
 
@@ -1025,16 +1087,64 @@
       }
 
       .site-nav {
-        align-items: flex-start;
+        position: sticky;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
         min-height: auto;
-        padding: 18px;
+        padding: 14px 16px;
+        gap: 12px;
+      }
+
+      .brand {
+        flex: 1;
+        min-width: 0;
+        order: 1;
+      }
+
+      .nav-controls {
+        justify-self: auto;
+        order: 2;
+      }
+
+      .brand span {
+        max-width: 14ch;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .menu-toggle {
+        display: grid;
       }
 
       .nav-links {
-        max-width: 230px;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        gap: 12px 18px;
+        display: none;
+        width: 100%;
+        order: 3;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 0;
+        max-width: none;
+        border: 1px solid var(--line-soft);
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.03);
+        overflow: hidden;
+      }
+
+      .site-nav.is-open .nav-links {
+        display: grid;
+      }
+
+      .nav-links a {
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--line-soft);
+        color: var(--muted);
+      }
+
+      .nav-links a:last-child {
+        border-bottom: 0;
       }
 
       section {
@@ -1044,6 +1154,14 @@
       .hero {
         min-height: auto;
         padding-top: 44px;
+      }
+
+      h1 {
+        font-size: clamp(42px, 11vw, 58px);
+        letter-spacing: -0.05em;
+        line-height: 0.98;
+        max-width: 100%;
+        overflow-wrap: anywhere;
       }
 
       .hero-meta,
@@ -1149,15 +1267,29 @@
     <nav class="site-nav" aria-label="Primary navigation">
       <a href="#home" class="brand" aria-label="Saja Alhomrany home">
         <img src="/assets/images/logo.png" alt="" />
-        <span data-i18n="brand">SAJA</span>
+        <span data-i18n="brand">SAJA ALHOMRANY</span>
       </a>
-      <div class="nav-links">
+      <div class="nav-links" id="primaryNav">
         <a href="#projects" data-i18n="navProjects">Projects</a>
         <a href="#tech-stack" data-i18n="navSkills">Tech</a>
         <a href="#experience" data-i18n="navExperience">Experience</a>
         <a href="#contact" data-i18n="navContact">Contact</a>
       </div>
-      <button class="lang-toggle" type="button" data-i18n="langButton">العربية</button>
+      <div class="nav-controls">
+        <button class="lang-toggle" type="button" aria-label="Switch language" title="Language">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M3 12h18"></path>
+            <path d="M12 3a14 14 0 0 1 0 18"></path>
+            <path d="M12 3a14 14 0 0 0 0 18"></path>
+          </svg>
+        </button>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </nav>
 
     <main id="home">
@@ -1210,7 +1342,7 @@
       <section id="projects">
         <div class="section-head reveal">
           <h2 class="section-title" data-i18n="projectsTitle">Featured product work.</h2>
-          <p class="section-copy" data-i18n="projectsCopy">Two focused product stories across goal tracking, sensory interaction, interface design, and real product execution.</p>
+          <p class="section-copy" data-i18n="projectsCopy">Three focused product stories across sensory interaction, food safety scanning, and goal tracking with real App Store launches.</p>
         </div>
 
         <div class="featured-stack">
@@ -1237,12 +1369,36 @@
             </div>
           </article>
 
+          <article class="feature-project reverse reveal" data-case-study-url="https://www.behance.net/gallery/251838125/Glutnic" style="--image-glow: radial-gradient(circle at 48% 40%, rgba(78, 168, 112, 0.24), transparent 42%);">
+            <div class="project-brief">
+              <div>
+                <p class="project-kicker">Food Scanner</p>
+                <h3><a class="project-title-link" href="https://www.behance.net/gallery/251838125/Glutnic" target="_blank" rel="noopener noreferrer">Glutinc</a></h3>
+                <div class="project-actions">
+                  <a class="project-action store" href="https://apps.apple.com/sa/app/glutinc-food-scanner/id6756580761" target="_blank" rel="noopener noreferrer" data-i18n="glutincAppStore">Available on App Store</a>
+                  <a class="project-action" href="https://www.behance.net/gallery/251838125/Glutnic" target="_blank" rel="noopener noreferrer" data-i18n="projectCaseStudy">Case Study</a>
+                </div>
+              </div>
+              <p data-i18n="glutincDesc">A mobile community product for gluten sensitivity with product scanning, safety checks, and user recommendations for safer everyday choices.</p>
+              <div class="tags">
+                <span class="tag">Mobile App</span>
+                <span class="tag">SwiftUI</span>
+                <span class="tag">Food Safety</span>
+                <span class="tag">Community</span>
+              </div>
+            </div>
+            <div class="project-media wide">
+              <img src="/assets/images/glutinc-showcase.png" alt="Glutinc food scanner app screens" />
+            </div>
+          </article>
+
           <article class="feature-project reveal" data-case-study-url="https://www.behance.net/gallery/251839777/ORBit" style="--image-glow: radial-gradient(circle at 50% 38%, rgba(116, 106, 167, 0.24), transparent 42%);">
             <div class="project-brief">
               <div>
                 <p class="project-kicker">Goal Tracking Platform</p>
-                <h3><a class="project-title-link" href="https://www.behance.net/gallery/251839777/ORBit" target="_blank" rel="noopener noreferrer">Orbit</a></h3>
+                <h3><a class="project-title-link" href="https://www.behance.net/gallery/251839777/ORBit" target="_blank" rel="noopener noreferrer">ORBIT Goals</a></h3>
                 <div class="project-actions">
+                  <a class="project-action store" href="https://apps.apple.com/sa/app/orbit-goals/id6780215505" target="_blank" rel="noopener noreferrer" data-i18n="orbitAppStore">Available on App Store</a>
                   <a class="project-action" href="https://www.behance.net/gallery/251839777/ORBit" target="_blank" rel="noopener noreferrer" data-i18n="projectCaseStudy">Case Study</a>
                 </div>
               </div>
@@ -1328,7 +1484,6 @@
     const data = {
       en: {
         brand: "SAJA ALHOMRANY",
-        langButton: "العربية",
         navProjects: "Projects",
         navSkills: "Tech",
         navExperience: "Experience",
@@ -1350,11 +1505,14 @@
         aboutFive: "Product Builder",
         aboutSix: "Saudi Arabia",
         projectsTitle: "Featured product work.",
-        projectsCopy: "Two focused product stories across goal tracking, sensory interaction, interface design, and real product execution.",
+        projectsCopy: "Three focused product stories across sensory interaction, food safety scanning, and goal tracking with real App Store launches.",
         orbitDesc: "A goal-tracking product concept built around momentum, friendly rivalry, and visual progress that turns ambitions into small, repeatable actions.",
+        glutincDesc: "A mobile community product for gluten sensitivity with product scanning, safety checks, and user recommendations for safer everyday choices.",
         sensicDesc: "A sensory music experience that turns sound into touch through custom haptic controls, practice mode, recordings, and accessibility-focused interaction.",
         sensicCaseStudy: "View Case Study",
         sensicAppStore: "Available on App Store",
+        glutincAppStore: "Available on App Store",
+        orbitAppStore: "Available on App Store",
         projectCaseStudy: "Case Study",
         otherTitle: "Other work.",
         otherCopy: "Selected supporting projects across mobile apps, web interfaces, backend work, and product concepts.",
@@ -1380,7 +1538,6 @@
         footerName: "SAJA ALHOMRANY",
         footerRole: "Software Engineer",
         projects: [
-          ["Glutinc", "A mobile community product for gluten sensitivity, product scanning, safety checks, and user recommendations.", "/assets/images/glutinc-showcase.png", "https://www.behance.net/gallery/251838125/Glutnic"],
           ["VERGE", "A fashion UI/UX concept blending cultural identities through visual storytelling.", "/assets/images/verge-showcase.png", "https://www.behance.net/gallery/251839921/Verge"],
           ["Colora", "A creative self-reflection app combining drawing, emotional prompts, and journaling.", "/assets/images/colora-showcase.png", "https://www.behance.net/gallery/251839475/Colora"],
           ["Movie Center", "A SwiftUI movie app connected to real backend APIs, relational data, and stable loading states.", "/assets/images/movie-center-showcase.png"],
@@ -1409,7 +1566,6 @@
       },
       ar: {
         brand: "سجى الحمراني",
-        langButton: "English",
         navProjects: "المشاريع",
         navSkills: "التقنيات",
         navExperience: "الخبرة",
@@ -1431,11 +1587,14 @@
         aboutFive: "بناء منتجات",
         aboutSix: "السعودية",
         projectsTitle: "أعمال منتجات مختارة.",
-        projectsCopy: "قصتان مركزتان حول تتبع الأهداف، والتفاعل الحسي، وتصميم الواجهات، وتنفيذ منتجات قابلة للاستخدام.",
+        projectsCopy: "ثلاث قصص مركزة حول التفاعل الحسي، وفحص سلامة الغذاء، وتتبع الأهداف مع إطلاقات حقيقية على App Store.",
         orbitDesc: "تصور منتج لتتبع الأهداف مبني حول الزخم والمنافسة اللطيفة والتقدم البصري لتحويل الطموحات إلى خطوات صغيرة متكررة.",
+        glutincDesc: "منتج جوال مجتمعي لحساسية الغلوتين مع فحص المنتجات، والتحقق من السلامة، وتوصيات المستخدمين لاختيارات يومية أكثر أمانًا.",
         sensicDesc: "تجربة موسيقية حسية تحول الصوت إلى لمس عبر اهتزازات مخصصة، ووضع تدريب، وتسجيلات، وتفاعل يراعي الوصولية.",
         sensicCaseStudy: "عرض دراسة الحالة",
         sensicAppStore: "متوفر على App Store",
+        glutincAppStore: "متوفر على App Store",
+        orbitAppStore: "متوفر على App Store",
         projectCaseStudy: "دراسة الحالة",
         otherTitle: "أعمال أخرى.",
         otherCopy: "مشاريع داعمة مختارة عبر تطبيقات الجوال وواجهات الويب والباكند ومفاهيم المنتجات.",
@@ -1461,7 +1620,6 @@
         footerName: "سجى الحمراني",
         footerRole: "مهندسة برمجيات",
         projects: [
-          ["Glutinc", "منتج جوال مجتمعي لحساسية الغلوتين، يساعد على فحص المنتجات، والتحقق من السلامة، واستعراض توصيات المستخدمين.", "/assets/images/glutinc-showcase.png", "https://www.behance.net/gallery/251838125/Glutnic"],
           ["VERGE", "مفهوم UI/UX في الأزياء يمزج الهويات الثقافية عبر سرد بصري.", "/assets/images/verge-showcase.png", "https://www.behance.net/gallery/251839921/Verge"],
           ["Colora", "تطبيق للتأمل الذاتي يجمع الرسم، والمحفزات العاطفية، والتدوين.", "/assets/images/colora-showcase.png", "https://www.behance.net/gallery/251839475/Colora"],
           ["Movie Center", "تطبيق أفلام SwiftUI متصل بواجهات API حقيقية وبيانات علائقية وحالات تحميل مستقرة.", "/assets/images/movie-center-showcase.png"],
@@ -1494,7 +1652,9 @@
     const stackGrid = document.getElementById("stackGrid");
     const timeline = document.getElementById("timeline");
     const achievementGrid = document.getElementById("achievementGrid");
+    const siteNav = document.querySelector(".site-nav");
     const langButton = document.querySelector(".lang-toggle");
+    const menuToggle = document.querySelector(".menu-toggle");
     const stackIcons = ["<>", "()", "DB", "CL", "AI", "UX", "TL"];
     const achievementIconRules = [
       [/Apple|أكاديمية|Developer Academy/i, ""],
@@ -1507,6 +1667,13 @@
       [/Backend|تكاملات/i, "API"]
     ];
     let currentLang = "en";
+
+    function closeMobileMenu() {
+      if (!siteNav || !menuToggle) return;
+      siteNav.classList.remove("is-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Open menu");
+    }
 
     function getAchievementIcon(text) {
       const match = achievementIconRules.find(([pattern]) => pattern.test(text));
@@ -1560,10 +1727,23 @@
         if (t[key]) node.textContent = t[key];
       });
       renderCollections(t);
+      closeMobileMenu();
+    }
+
+    if (menuToggle) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = siteNav.classList.toggle("is-open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+      });
     }
 
     langButton.addEventListener("click", () => {
       applyLanguage(currentLang === "en" ? "ar" : "en");
+    });
+
+    siteNav.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", closeMobileMenu);
     });
 
     stackGrid.addEventListener("click", event => {
